@@ -1,0 +1,93 @@
+{ pkgs, ... }:
+let
+  catppuccin_alacritty = builtins.fetchGit {
+    url = "https://github.com/catppuccin/alacritty";
+    ref = "main";
+  };
+in
+{
+  programs.alacritty = {
+    enable = true;
+    settings = {
+      import = [
+        "~/.config/alacritty/catppuccin/catppuccin-macchiato.yml"
+      ];
+      shell = {
+        program = "zsh";
+        #args = [
+        #  "-l"
+        #  "-c"
+        #  "tmux attach || tmux"
+        #];
+      };
+      window = {
+        decorations = "full";
+	      dimensions = {
+	        columns = 108;
+	        lines = 36;
+	      };
+        opacity = 1;
+      };
+      font = {
+        size = 12;
+        offset = {
+          y = 0;
+          x = 0;
+        };
+        glyph_offset = {
+          y = 0;
+          x = 0;
+        };
+        bold = {
+          style  = "Bold";
+          family = "FiraCode Nerd Font";
+        };
+        normal = {
+          style  = "Regular";
+          family = "FiraCode Nerd Font";
+        };
+      };
+    };
+  };
+
+  # Theme for alacritty
+  home.file.".config/alacritty/catppuccin/catppuccin-macchiato.yml".source = "${catppuccin_alacritty}/catppuccin-macchiato.yml";
+
+  programs.tmux = {
+    enable = true;
+    clock24 = true;
+    shortcut = "Space";
+    plugins = with pkgs; [
+      tmuxPlugins.catppuccin
+      tmuxPlugins.yank
+      tmuxPlugins.vim-tmux-navigator
+    ];
+    extraConfig = ''
+      set -g default-terminal "screen-256color"
+      set-option -ga terminal-overrides ",alacritty:RGB"
+      set -g @catppuccin_flavour "macchiato"
+
+      # Enable mouse support 
+      set -g mouse on
+    '';
+  };
+
+  programs.wezterm = {
+    enable = true;
+    extraConfig = ''
+      local wezterm = require 'wezterm'
+      local config = {}
+      config.color_scheme = 'Catppuccin Macchiato'
+      config.hide_tab_bar_if_only_one_tab = true
+      -- config.window_decorations = 'RESIZE'
+      config.window_frame = {
+        active_titlebar_bg = '#24273a',
+        inactive_titlebar_bg = '#24273a'
+      }
+      config.window_background_opacity = 0.99
+      -- config.win32_system_backdrop = 'Acrylic'
+      -- config.macos_window_background_blur = 20
+      return config
+    '';
+  };
+}
