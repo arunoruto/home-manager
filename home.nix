@@ -45,6 +45,7 @@
     gimp
     inkscape
     jabref
+    julia
     obsidian
     octaveFull
     octavePackages.image

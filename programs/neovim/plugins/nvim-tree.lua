@@ -31,10 +31,10 @@ require("nvim-tree").setup({
 	view = {
 		width = 25,
 		side = "left",
-		mappings = {
-			custom_only = false,
-			list = {},
-		},
+    -- mappings = {
+		-- 	custom_only = false,
+		-- 	list = {},
+		-- },
 	},
 	actions = {
 		open_file = {
