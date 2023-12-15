@@ -28,10 +28,6 @@ in
       name = "Catppuccin-Macchiato-Dark-Cursors";
       package = pkgs.catppuccin-cursors.macchiatoDark;
     };
-    #iconTheme = {
-    #  name = "Candy-icon";
-    #  #package = "${candy-icons}";
-    #};
   };
 
   #home.sessionVariables.GTK_THEME = catppuccin_name;

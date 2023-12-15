@@ -9,7 +9,7 @@
   programs.home-manager.enable = true;
 
   imports = [
-    ./user.nix
+    #./user.nix
     ./shell.nix
     ./theming.nix
     ./programs/vim.nix
@@ -22,6 +22,8 @@
   # manage.
   #home.username = "mirza";
   #home.homeDirectory = "/home/mirza";
+  home.username = builtins.getEnv "USER";
+  home.homeDirectory = builtins.getEnv "HOME";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -42,26 +44,26 @@
     in
   [
     #breitbandmessung
-    foliate
+    #foliate
     gimp
     inkscape
     jabref
     julia
-    obsidian
-    octaveFull
-    octavePackages.image
-    okular
+    #obsidian
+    #octaveFull
+    #octavePackages.image
+    #okular
     rnote
     #RStudio-with-my-packages
     speedtest-cli
     spotify
-    standardnotes
+    #standardnotes
     #teams
     telegram-desktop
     #ultrastardx
-    via
-    vial
-    qbittorrent
+    #via
+    #vial
+    #qbittorrent
 
     exercism
     hugo
@@ -148,8 +150,8 @@
     "org/gnome/desktop/background" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri      = "file:///home/mar/.local/share/backgrounds/komet/komet.xml";
-      picture-uri-dark = "file:///home/mar/.local/share/backgrounds/komet/komet.xml";
+      picture-uri      = "file://${builtins.getEnv "HOME"}/.local/share/backgrounds/komet/komet.xml";
+      picture-uri-dark = "file://${builtins.getEnv "HOME"}/.local/share/backgrounds/komet/komet.xml";
     };
     # Set some interface options found in tweaks
     "org/gnome/desktop/interface" = {
