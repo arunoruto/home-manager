@@ -2,7 +2,7 @@
 let
   catppuccin_alacritty = builtins.fetchGit {
     url = "https://github.com/catppuccin/alacritty";
-    ref = "main";
+    ref = "refs/tags/yaml";
   };
 in
 {

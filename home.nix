@@ -17,6 +17,7 @@
     #./programs/octave.nix
     ./programs/python.nix
     ./programs/terminal.nix
+    ./programs/steam.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -64,6 +65,7 @@
     #via
     #vial
     #qbittorrent
+    youtube-dl
 
     exercism
     hugo
