@@ -1,5 +1,9 @@
-{ ... }:
+{ pkgs, ... }:
 {
+  home.packages = with pkgs; [
+    glab # Gitlab CLI tool
+  ];
+
   programs.git = {
     enable = true;
     userName  = "arunoruto";
@@ -12,6 +16,9 @@
       };
     }];
     extraConfig = {
+      "credential \"https://gitlab.com\"" = {
+        helper = "${pkgs.glab}/bin/glab auth git-credential";
+      };
       pull = {
         rebase = true;
       };
