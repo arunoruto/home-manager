@@ -35,6 +35,8 @@ in
 {
   home.packages = with pkgs; [
     (python3.withPackages packages)
+    poetry
+    mkdocs
     #pkgs.streamlit
   ];
 }
