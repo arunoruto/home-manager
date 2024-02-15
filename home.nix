@@ -55,11 +55,8 @@
     #octavePackages.image
     #okular
     rnote
-    #RStudio-with-my-packages
     speedtest-cli
     spotify
-    #standardnotes
-    #teams
     telegram-desktop
     #ultrastardx
     #via
@@ -68,9 +65,11 @@
     youtube-dl
 
     exercism
+    fzf
     hugo
     julia
     thefuck
+    zoxide
 
     gnomeExtensions.appindicator
     gnomeExtensions.emoji-selector
@@ -172,7 +171,8 @@
     # The keybindings to mention above
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       name = "alacritty super";
-      command = "env WAYLAND_DISPLAY= alacritty";
+      #command = "env WAYLAND_DISPLAY= alacritty";
+      command = "wezterm start --always-new-process";
       binding = "<Super>Return";
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
