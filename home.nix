@@ -20,6 +20,7 @@
 
     ./gnome/theming.nix
     ./gnome/dconf.nix
+    ./sway/main.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.

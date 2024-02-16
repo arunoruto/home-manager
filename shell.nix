@@ -1,6 +1,19 @@
 { config, pkgs, ... }:
 let
   flavour = "macchiato";
+  catppuccin-bat = builtins.fetchGit {
+    url = "https://github.com/catppuccin/bat";
+    ref = "main";
+  };
+  #catppuccin_bat = {
+  #  src = pkgs.fetchFromGitHub {
+  #    owner = "catppuccin";
+  #    repo = "bat"; # Bat uses sublime syntax for its themes
+  #    rev = "main";
+  #    #sha256 = "019hfl4zbn4vm4154hh3bwk6hm7bdxbr1hdww83nabxwjn99ndhv";
+  #  };
+  #  file = "Catppuccin-${flavour}.tmTheme";
+  #};
 in
 {
   programs.starship = {
@@ -33,10 +46,11 @@ in
       #sudo = "sudo -E -s ";
       ls = "eza";
       ll = "ls -l";
+      cat = "bat -p";
+      vim = "nvim";
       update = ''bash -c "sudo nixos-rebuild switch"'';
       update-channel = ''bash -c "sudo nix-channel --update"'';
       home = "home-manager switch";
-      vim = "nvim";
       rm-gtk-settings = "rm ~/.config/gtk-4.0/settings.ini ~/.config/gtk-3.0/settings.ini";
     };
     sessionVariables = {
@@ -75,4 +89,19 @@ in
 
   # Bash
   programs.bash.initExtra = ''eval "$(direnv hook bash)"'';
+
+  # bat
+  programs.bat = {
+    enable = true;
+    config = {
+      paging = "never";
+      style = "plain";
+      theme = "Monokai Extended";
+      #themes = "${catppuccin_bat}/Catppuccin-macchiato.tmTheme";
+    };
+  };
+  home.file.".config/bat/themes/catppuccin" = {
+      recursive = true;
+      source = "${catppuccin-bat}";
+    };
 }
