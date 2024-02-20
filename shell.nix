@@ -46,7 +46,7 @@ in
       #sudo = "sudo -E -s ";
       ls = "eza";
       ll = "ls -l";
-      cat = "bat -p";
+      cat = "bat";
       vim = "nvim";
       update = ''bash -c "sudo nixos-rebuild switch"'';
       update-channel = ''bash -c "sudo nix-channel --update"'';

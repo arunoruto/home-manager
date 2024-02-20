@@ -72,6 +72,7 @@
     hugo
     julia
     thefuck
+    yazi
     zoxide
 
     gnomeExtensions.appindicator

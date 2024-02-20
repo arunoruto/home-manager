@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 let
   flavor = "Macchiato";
   catppuccin_sway = builtins.fetchGit {
@@ -53,6 +53,14 @@ in
       bars = [
         {
           position = "top";
+          mode = "dock";
+          hiddenState = "hide";
+          command = "${pkgs.waybar}/bin/waybar";
+          #command = "${pkgs.sway}/bin/swaybar";
+          #statusCommand = "${pkgs.i3status}/bin/i3status";
+          workspaceButtons = true;
+          workspaceNumbers = false;
+          trayOutput = "primary";
           fonts = {
             names = [ "FiraCode Nerd Font Mono" ];
             style = "Regular";

@@ -4,6 +4,7 @@
     ./services.nix
     ./theme.nix
     ./keybindings.nix
+    ./waybar.nix
   ];
   wayland.windowManager.sway = {
     enable = true;
@@ -41,7 +42,7 @@
       };
       output = {
         "*" = {
-          bg = "~/Pictures/Wallpaper/train.png fill";
+          bg = "~/Pictures/wallpapers/anime/cafe-at-night.png fill";
           scale = "1.25";
         };
       };
