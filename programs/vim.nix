@@ -40,6 +40,7 @@ in
           julials.enable = true;
         };
       };
+      #startup.enable = true;
       treesitter.enable = true;
     };
   };
