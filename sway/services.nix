@@ -22,4 +22,8 @@ in
     defaultTimeout = 10000;
     extraConfig = builtins.readFile("${catppuccin-mako}/src/${flavor}");
   };
+
+  #services.wob = {
+  #  enable = true;
+  #};
 }
