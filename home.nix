@@ -128,6 +128,14 @@
           HostName kyuubi
           User mar
           ForwardX11 yes
+      Host ultron.tail
+          Hostname ultron
+          User mar
+          ForwardX11 yes
+      Host jabba.tail
+          Hostname jabba
+          User mar
+          ForwardX11 yes
     '';
   };
 
