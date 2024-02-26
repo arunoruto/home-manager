@@ -22,10 +22,10 @@ in
     settings = {
       # add_newline = false;
 
-      # character = {
-      #   success_symbol = "[➜](bold green)";
-      #   error_symbol = "[➜](bold red)";
-      # };
+      character = {
+        success_symbol = "[➜](bold green)";
+        error_symbol = "[➜](bold red)";
+      };
 
       # package.disabled = true;
       palette = "catppuccin_${flavour}";
@@ -67,6 +67,17 @@ in
     initExtra = ''
       #source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
       #source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+      function get-pr-override() {
+        PR_NO=$1
+        HASH=$(curl -sL https://github.com/NixOS/nixpkgs/pull/''${PR_NO}.patch \
+              | head -n 1 | grep -o -E -e "[0-9a-f]{40}")
+        echo pr''${PR_NO} = "import (fetchTarball"
+        echo "  \"\''${nixpkgs-tars}''${HASH}.tar.gz\")"
+        echo "    { config = config.nixpkgs.config; };"
+      }
+
+      eval "$(thefuck --alias)"
       eval "$(direnv hook zsh)"
       eval "$(zoxide init --cmd cd zsh)"
     '';
@@ -74,17 +85,27 @@ in
     #  enable = true;
     #  plugins = [
     #    "zsh-users/zsh-autosuggestions"
+    #    "zsh-users/zsh-syntax-highlighting"
     #  ];
     #};
     oh-my-zsh = {
-      enable = true;
-      theme = "robbyrussell";
-      plugins = [
-      	"git"
-        "thefuck"
-        "docker"
-      ];
+      enable = false;
+    #  theme = "robbyrussell";
+    #  plugins = [
+    #  	"git"
+    #    "thefuck"
+    #    "docker"
+    #  ];
     };
+    plugins = [
+      {
+        name = "zsh-autosuggestions";
+        src = builtins.fetchGit {
+          url = "https://github.com/zsh-users/zsh-autosuggestions";
+          ref = "master";
+        };
+      }
+    ];
   };
 
   # Bash
