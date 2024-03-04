@@ -44,9 +44,12 @@ in
     enable = true;
     shellAliases = {
       #sudo = "sudo -E -s ";
-      ls = "eza";
+      #ls = "eza";
+      ls = "lsd";
       ll = "ls -l";
-      cat = "bat";
+      la = "ls -la";
+      cat  = "bat --paging=never";
+      less = "bat --paging=always";
       vim = "nvim";
       update = ''bash -c "sudo nixos-rebuild switch"'';
       update-channel = ''bash -c "sudo nix-channel --update"'';
@@ -67,6 +70,9 @@ in
     initExtra = ''
       #source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
       #source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+      bindkey "^[[1;5C" forward-word
+      bindkey "^[[1;5D" backward-word
 
       function get-pr-override() {
         PR_NO=$1
@@ -115,8 +121,8 @@ in
   programs.bat = {
     enable = true;
     config = {
-      paging = "never";
-      style = "plain";
+      #paging = "never";
+      #style = "plain";
       theme = "Monokai Extended";
       #themes = "${catppuccin_bat}/Catppuccin-macchiato.tmTheme";
     };
@@ -125,4 +131,12 @@ in
       recursive = true;
       source = "${catppuccin-bat}";
     };
+
+  programs.atuin = {
+    enable = true;
+    enableZshIntegration = true;
+    flags = [
+      "--disable-up-arrow"
+    ];
+  };
 }
