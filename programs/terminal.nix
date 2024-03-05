@@ -1,8 +1,12 @@
 { pkgs, ... }:
 let
-  catppuccin_alacritty = builtins.fetchGit {
+  catppuccin-alacritty = builtins.fetchGit {
     url = "https://github.com/catppuccin/alacritty";
     ref = "refs/tags/yaml";
+  };
+  catppuccin-warp = builtins.fetchGit {
+    url = "https://github.com/catppuccin/warp"; 
+    ref = "main";
   };
 in
 {
@@ -51,7 +55,13 @@ in
   };
 
   # Theme for alacritty
-  home.file.".config/alacritty/catppuccin/catppuccin-macchiato.yml".source = "${catppuccin_alacritty}/catppuccin-macchiato.yml";
+  home.file.".config/alacritty/catppuccin/catppuccin-macchiato.yml".source = "${catppuccin-alacritty}/catppuccin-macchiato.yml";
+
+  # Theme for Warp
+  home.file.".local/share/warp-terminal/themes/catppuccin" = {
+    recursive = true;
+    source = "${catppuccin-warp}/dist";
+  };
 
   programs.tmux = {
     enable = true;
