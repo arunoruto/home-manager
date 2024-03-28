@@ -1,31 +1,20 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, lib, ... }:
 {
+	# Allow unfree software
   nixpkgs = {
     config = {
       allowUnfree = true;
     };
   };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
   imports = [
-    #./user.nix
-    ./shell.nix
-    ./programs/vim.nix
-    ./programs/git.nix
-    #./programs/octave.nix
-    ./programs/python.nix
-    ./programs/terminal.nix
-    ./programs/steam.nix
-
-    ./gnome/theming.nix
-    ./gnome/dconf.nix
-    ./sway/main.nix
+    ./imports.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  #home.username = "mirza";
-  #home.homeDirectory = "/home/mirza";
   home.username = builtins.getEnv "USER";
   home.homeDirectory = builtins.getEnv "HOME";
 
@@ -40,56 +29,10 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with pkgs; 
-    let
-      RStudio-with-my-packages = rstudioWrapper.override{ packages = with rPackages; [
-        ggplot2 dplyr xts rstan hBayesDM
-      ];};
-    in
-  [
-    #breitbandmessung
-    #foliate
-    gimp
-    inkscape
-    jabref
-    julia
-    #obsidian
-    #octaveFull
-    #octavePackages.image
-    #okular
-    rnote
-    speedtest-cli
-    spotify
-    telegram-desktop
-    #ultrastardx
-    #via
-    #vial
-    #qbittorrent
-    youtube-dl
-
-    exercism
-    fzf
-    hugo
-    julia
-    thefuck
-    yazi
-    zoxide
-
-    gnomeExtensions.appindicator
-    gnomeExtensions.emoji-selector
-    gnomeExtensions.focus
-    gnomeExtensions.tailscale-status
-    gnomeExtensions.transparent-top-bar
-
-    #(nerdfonts.override { fonts = [ "FiraCode" ]; })
-
-    (writeShellScriptBin "my-hello" ''
-      echo "Hello, ${config.home.username}!"
-    '')
-
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-  ];
+  # This is now done in the respective client and server files
+  #home.packages = with pkgs; 
+  #[
+  #];
 
   ## Fonts
   #fonts.fonts = with pkgs; [

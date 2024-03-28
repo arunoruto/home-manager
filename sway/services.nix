@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 let
   flavor = "macchiato";
   catppuccin-rofi = builtins.fetchGit {
