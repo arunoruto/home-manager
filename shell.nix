@@ -68,9 +68,6 @@ in
     enableCompletion = true;
 
     initExtra = ''
-      #source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-      #source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
       bindkey "^[[1;5C" forward-word
       bindkey "^[[1;5D" backward-word
 
@@ -95,7 +92,7 @@ in
     #  ];
     #};
     oh-my-zsh = {
-      enable = false;
+      enable = true;
     #  theme = "robbyrussell";
     #  plugins = [
     #  	"git"
