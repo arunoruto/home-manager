@@ -38,7 +38,8 @@ in
     };
     plugins = {
       bufferline.enable = true;
-      comment.enable = true;
+      #comment.enable = true;
+      comment-nvim.enable = true;
       lsp = {
         enable = true;
         servers = {
