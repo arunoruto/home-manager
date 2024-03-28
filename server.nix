@@ -12,13 +12,8 @@
   [
     speedtest-cli
 
-    fzf
     hugo
     julia
-		lsd
-    thefuck
-    yazi
-    zoxide
 
     zsh-autosuggestions
     zsh-syntax-highlighting
