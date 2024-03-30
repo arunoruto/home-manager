@@ -1,11 +1,12 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ./shell.nix
-    ./programs/vim.nix
+    ./shell
+    #./programs/vim.nix
+    ./programs/nvim
     ./programs/git.nix
     ./programs/python.nix
-    ./programs/terminal.nix
+    ./programs/terminal
   ];
 
   home.packages = with pkgs;

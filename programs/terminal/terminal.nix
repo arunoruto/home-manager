@@ -110,6 +110,7 @@ in
       config.initial_rows = 36
       config.initial_cols = 108
       config.font = wezterm.font_with_fallback {
+        'Fira Code',
         'FiraCode Nerd Font',
       }
       return config
