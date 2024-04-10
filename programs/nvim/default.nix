@@ -77,6 +77,13 @@ in
     };
     extraPlugins = with pkgs.vimPlugins; [
       nvim-web-devicons
+      (pkgs.vimUtils.buildVimPlugin {
+        name = "nvcheatsheet";
+        src = builtins.fetchGit {
+            url = "https://github.com/smartinellimarco/nvcheatsheet.nvim";
+            ref = "master";
+        };
+      })
     ];
     keymaps = [
       {
