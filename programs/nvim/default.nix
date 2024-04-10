@@ -66,10 +66,13 @@ in
           };
         };
       };
+      telescope = {
+        enable = true;
+      };
       alpha = {
         enable = true;
         iconsEnabled = false;
-        theme = "dashboard";
+        #theme = "dashboard";
       };
       #startup-nvim.enable = true;
       treesitter.enable = true;
@@ -77,14 +80,10 @@ in
     };
     extraPlugins = with pkgs.vimPlugins; [
       nvim-web-devicons
-      (pkgs.vimUtils.buildVimPlugin {
-        name = "nvcheatsheet";
-        src = builtins.fetchGit {
-            url = "https://github.com/smartinellimarco/nvcheatsheet.nvim";
-            ref = "master";
-        };
-      })
+      cheatsheet-nvim
     ];
+    extraConfigLua = ''
+    '';
     keymaps = [
       {
         action = ":NvimTreeToggle<cr>";
