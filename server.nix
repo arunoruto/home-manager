@@ -2,11 +2,7 @@
 {
   imports = [
     ./shell
-    #./programs/vim.nix
-    ./programs/nvim
-    ./programs/git.nix
-    ./programs/python.nix
-    ./programs/terminal
+    ./programs
   ];
 
   home.packages = with pkgs;
