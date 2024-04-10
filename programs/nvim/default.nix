@@ -69,6 +69,7 @@ in
       alpha = {
         enable = true;
         iconsEnabled = false;
+        theme = "dashboard";
       };
       #startup-nvim.enable = true;
       treesitter.enable = true;
