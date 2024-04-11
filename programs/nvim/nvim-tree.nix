@@ -1,17 +1,22 @@
-{ helpers, ... }:
+{ ... }:
 {
   programs.nixvim = {
-    globals = {
-      mapleader = " ";
-      maplocalleader = " ";
+    plugins = {
+      nvim-tree = {
+        enable = true;
+        git.enable = true;
+        diagnostics = {
+          enable = true;
+          icons = {
+            hint = "";
+            info = "";
+            warning = "";
+            error = "";
+          };
+        };
+      };
     };
-
-    #keymaps = helpers.keymaps.mkKeymaps {
-    #  mode = "n";
-    #  options.silent = true;
-    #}
-    keymaps = 
-    [
+    keymaps = [
       {
         action = ":NvimTreeToggle<cr>";
         key = "<C-n>";
@@ -46,4 +51,5 @@
       }
     ];
   };
+
 }

@@ -13,6 +13,8 @@ in
   imports = [
     nixvim.homeManagerModules.nixvim
     #./keymaps.nix
+    ./nvim-tree.nix
+    ./lualine.nix
   ];
 
   programs.nixvim = {
@@ -53,19 +55,6 @@ in
           nixd.enable = true;
         };
       };
-      nvim-tree = {
-        enable = true;
-        git.enable = true;
-        diagnostics = {
-          enable = true;
-          icons = {
-            hint = "";
-            info = "";
-            warning = "";
-            error = "";
-          };
-        };
-      };
       telescope = {
         enable = true;
       };
@@ -73,6 +62,9 @@ in
         enable = true;
         iconsEnabled = false;
         #theme = "dashboard";
+      };
+      which-key = {
+        enable = true;
       };
       #startup-nvim.enable = true;
       treesitter.enable = true;
@@ -85,38 +77,6 @@ in
     extraConfigLua = ''
     '';
     keymaps = [
-      {
-        action = ":NvimTreeToggle<cr>";
-        key = "<C-n>";
-        options = {
-          silent = true;
-          desc = "Nvim Tree: Toggle";
-        };
-      }
-      {
-        action = ":NvimTreeToggle<cr>";
-        key = "<leader>tt";
-        options = {
-          silent = true;
-          desc = "Nvim Tree: Toggle";
-        };
-      }
-      {
-        action = ":NvimTreeRefresh<cr>";
-        key = "<leader>tr";
-        options = {
-          silent = true;
-          desc = "Nvim Tree: Refresh";
-        };
-      }
-      {
-        action = ":NvimTreeFindFile<cr>";
-        key = "<leader>tf";
-        options = {
-          silent = true;
-          desc = "Nvim Tree: Find File";
-        };
-      }
     ];
   };
 
