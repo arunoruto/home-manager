@@ -13,8 +13,11 @@ in
   imports = [
     nixvim.homeManagerModules.nixvim
     #./keymaps.nix
+    ./alpha.nix
+    ./comment.nix
     ./nvim-tree.nix
     ./lualine.nix
+    ./lsp.nix
   ];
 
   programs.nixvim = {
@@ -46,22 +49,8 @@ in
       };
       #comment.enable = true;
       comment-nvim.enable = true;
-      lsp = {
-        enable = true;
-        servers = {
-          #pyright.enable = true;
-          ruff-lsp.enable = true;
-          julials.enable = true;
-          nixd.enable = true;
-        };
-      };
       telescope = {
         enable = true;
-      };
-      alpha = {
-        enable = true;
-        iconsEnabled = false;
-        #theme = "dashboard";
       };
       which-key = {
         enable = true;
