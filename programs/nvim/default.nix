@@ -57,6 +57,7 @@ in
       };
       #startup-nvim.enable = true;
       treesitter.enable = true;
+      gitsigns.enable = true;
       nix.enable = true;
     };
     extraPlugins = with pkgs.vimPlugins; [
