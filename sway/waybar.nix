@@ -17,8 +17,9 @@ in
         #spacing = 4;
 
         modules-left = [
-          "sway/workspaces"
-          "sway/mode"
+          #"sway/workspaces"
+          #"sway/mode"
+          "hyprland/workspaces"
           "image#cover-art"
           "custom/spotify"
           #"sway/scratchpad"
@@ -67,6 +68,30 @@ in
             "default" = "";
           };
         };        
+
+        "hyprland/workspaces" = {
+          disable-scroll = true;
+          all-outputs = true;
+          warp-on-scroll = false;
+          format = "{icon}";
+          format-icons = {
+            "1"  = "一";
+            "2"  = "二";
+            "3"  = "三";
+            "4"  = "四";
+            "5"  = "五";
+            "6"  = "六";
+            "7"  = "七";
+            "8"  = "八";
+            "9"  = "九";
+            "10" = "十";
+            "urgent" = "";
+            #"focused" = "";
+            "default" = "";
+          };
+          on-scroll-up   = "hyprctl dispatch workspace e+1";
+          on-scroll-down = "hyprctl dispatch workspace e-1";
+        };
 
         pulseaudio = {
           format = "{icon} {volume:3}%";

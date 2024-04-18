@@ -3,9 +3,9 @@
   imports = [
     ./programs/steam.nix
 
-    ./gnome/theming.nix
-    ./gnome/dconf.nix
-    ./sway/main.nix
+    ./gnome
+    ./sway
+    ./hyprland
   ];
   
   home.packages = with pkgs;
