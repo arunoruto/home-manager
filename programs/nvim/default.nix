@@ -58,6 +58,7 @@ in
       #startup-nvim.enable = true;
       treesitter.enable = true;
       gitsigns.enable = true;
+      # https://ejmastnak.com/tutorials/vim-latex/vimscript/
       vimtex.enable = true;
       nix.enable = true;
     };
