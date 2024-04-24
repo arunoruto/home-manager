@@ -21,6 +21,10 @@ in
     enableZshIntegration = true;
   };
 
+  #programs.fd = {
+  #  enable = true;
+  #};
+
   # bat
   programs.bat = {
     enable = true;
@@ -66,5 +70,10 @@ in
     enable = true;
     enableZshIntegration = true;
     nix-direnv.enable = true;
+  };
+
+
+  programs.ripgrep = {
+    enable = true;
   };
 }

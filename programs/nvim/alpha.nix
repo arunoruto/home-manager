@@ -6,7 +6,7 @@
         enable = true;
         iconsEnabled = false;
 
-        #layout = [
+        layout = [
         #  {
         #    type = "padding";
         #    val = 2;
@@ -67,7 +67,7 @@
         #    type = "text";
         #    val = "Inspiring quote here.";
         #  }
-        #];
+        ];
       };
     };
   };

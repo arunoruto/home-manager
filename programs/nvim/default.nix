@@ -54,6 +54,9 @@ in
       };
       which-key = {
         enable = true;
+        registrations = {
+          "<localLeader>l" = "+vimtex";
+        };
       };
       #startup-nvim.enable = true;
       treesitter.enable = true;

@@ -9,6 +9,12 @@
     userName  = "arunoruto";
     userEmail = "21687187+arunoruto@users.noreply.github.com";
     lfs.enable = true;
+    delta = {
+      enable = true;
+      options = {
+        side-by-side = true;
+      };
+    };
     includes = [{
       #condition = "gitdir:~/cloudseeds/**";
       contents = {

@@ -11,6 +11,18 @@
           nixd.enable = true;
           texlab.enable = true;
         };
+        #keymaps = {
+        #  extra = [
+        #    {
+        #      action = "<plug>(vimtex-doc-package)";
+        #      key = "<Leader>K";
+        #      options = {
+        #        desc = "Vimtex Docs";
+        #        silent = true;
+        #      };
+        #    }
+        #  ];
+        #};
       };
     };
   };
