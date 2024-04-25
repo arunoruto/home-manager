@@ -3,6 +3,7 @@ let
   modifier = config.wayland.windowManager.sway.config.modifier;
   terminal = "wezterm";
   menu  = "${pkgs.rofi}/bin/rofi -show drun";
+  lockscreen = "${pkgs.swaylock}/bin/swaylock";
   left  = "Left";
   right = "Right";
   up    = "Up";
@@ -38,6 +39,7 @@ in
         "${modifier}+Return" = "exec ${terminal}";
         "${modifier}+Shift+q" = "kill";
         "${modifier}+d" = "exec ${menu}";
+        #"${modifier}+Shift+l" = "exec ${lockscreen}";
 
         "${modifier}+${left}"  = "focus left";
         "${modifier}+${down}"  = "focus down";

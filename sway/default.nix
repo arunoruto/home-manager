@@ -1,4 +1,8 @@
-{ ... }:
+{ pkgs, ... }:
+let
+  image = "~/Pictures/wallpapers/anime/cafe-at-night.png";
+  lockscreen = "${pkgs.swaylock}/bin/swaylock --image ${image}";
+in
 {
   imports = [
     ./services.nix
@@ -43,9 +47,12 @@
       };
       output = {
         "*" = {
-          bg = "~/Pictures/wallpapers/anime/cafe-at-night.png fill";
+          bg = "${image} fill";
           scale = "1.25";
         };
+      };
+      keybindings = {
+        "${modifier}+Shift+l" = "exec ${lockscreen}";
       };
     };
   };
