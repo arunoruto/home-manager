@@ -7,7 +7,7 @@
   programs.git = {
     enable = true;
     userName  = "arunoruto";
-    userEmail = "21687187+arunoruto@users.noreply.github.com";
+    userEmail = "mirza.arnaut@tu-dortmund.de";
     lfs.enable = true;
     delta = {
       enable = true;
@@ -23,6 +23,9 @@
     }];
     extraConfig = {
       "credential \"https://gitlab.com\"" = {
+        helper = "${pkgs.glab}/bin/glab auth git-credential";
+      };
+      "credential \"https://gitlab.bv.e-technik.tu-dortmund.de\"" = {
         helper = "${pkgs.glab}/bin/glab auth git-credential";
       };
       pull = {
