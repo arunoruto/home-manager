@@ -17,8 +17,8 @@ in
         #spacing = 4;
 
         modules-left = [
-          #"sway/workspaces"
-          #"sway/mode"
+          "sway/workspaces"
+          "sway/mode"
           "hyprland/workspaces"
           "image#cover-art"
           "custom/spotify"
@@ -68,6 +68,11 @@ in
             "default" = "";
           };
         };        
+
+        "sway/mode" = {
+        	format = "{}";
+        	max-length = 50;
+        };
 
         "hyprland/workspaces" = {
           disable-scroll = true;
@@ -186,7 +191,7 @@ in
     @import "catppuccin/${flavor}.css";
 
     * {
-      font-family: FantasqueSansMono Nerd Font;
+      font-family: FiraCode Nerd Font;
       font-size: 17px;
       min-height: 0;
 
@@ -227,6 +232,14 @@ in
       color: @sapphire;
       background: @surface1;
       border-radius: 1rem;
+    }
+
+    #mode {
+      color: @blue;
+      border-radius: 1rem;
+      padding: 0.4rem;
+      margin: 5px;
+      background-color: @surface0;
     }
 
     #window {

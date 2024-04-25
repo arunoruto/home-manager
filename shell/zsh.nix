@@ -17,6 +17,7 @@
       update-channel = ''bash -c "sudo nix-channel --update"'';
       home = "home-manager switch";
       #rm-gtk-settings = "rm ~/.config/gtk-4.0/settings.ini ~/.config/gtk-3.0/settings.ini";
+      tss = "tailscale switch $(tailscale switch --list | tail -n +2 | fzf | cut -d' ' -f1)";
     };
     sessionVariables = {
       PATH = "$HOME/.bin:$PATH";

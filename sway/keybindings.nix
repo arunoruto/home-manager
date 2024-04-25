@@ -39,25 +39,15 @@ in
         "${modifier}+Shift+q" = "kill";
         "${modifier}+d" = "exec ${menu}";
 
-        "${modifier}+${left}" = "focus left";
-        "${modifier}+${down}" = "focus down";
-        "${modifier}+${up}" = "focus up";
+        "${modifier}+${left}"  = "focus left";
+        "${modifier}+${down}"  = "focus down";
+        "${modifier}+${up}"    = "focus up";
         "${modifier}+${right}" = "focus right";
 
-        #"${modifier}+Left" = "focus left";
-        #"${modifier}+Down" = "focus down";
-        #"${modifier}+Up" = "focus up";
-        #"${modifier}+Right" = "focus right";
-
-        "${modifier}+Shift+${left}" = "move left";
-        "${modifier}+Shift+${down}" = "move down";
-        "${modifier}+Shift+${up}" = "move up";
+        "${modifier}+Shift+${left}"  = "move left";
+        "${modifier}+Shift+${down}"  = "move down";
+        "${modifier}+Shift+${up}"    = "move up";
         "${modifier}+Shift+${right}" = "move right";
-
-        #"${modifier}+Shift+Left" = "move left";
-        #"${modifier}+Shift+Down" = "move down";
-        #"${modifier}+Shift+Up" = "move up";
-        #"${modifier}+Shift+Right" = "move right";
 
         "${modifier}+b" = "splith";
         "${modifier}+v" = "splitv";

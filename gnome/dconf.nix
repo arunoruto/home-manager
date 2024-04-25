@@ -24,16 +24,23 @@
     "org/gnome/settings-daemon/plugins/media-keys" = {
       custom-keybindings = [
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+        #"/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
       ];
     };
     # The keybindings to mention above
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-      name = "alacritty super";
+      name = "Terminal Super";
       #command = "env WAYLAND_DISPLAY= alacritty";
       command = "wezterm start --always-new-process";
       binding = "<Super>Return";
     };
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+    #"org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+    #  name = "Tailscale Switch";
+    #  command = "tailscale switch $(tailscale switch --list | tail -n +2 | rofi -dmenu | cut -d' ' -f1)";
+    #  binding = "<Shift><Super>t";
+    #};
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
       name = "emoji picker";
       command = "flatpak run it.mijorus.smile";
       binding = "<Control>less";

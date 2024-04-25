@@ -5,6 +5,7 @@
     ./theme.nix
     ./keybindings.nix
     ./waybar.nix
+    ./swaylock.nix
   ];
   wayland.windowManager.sway = {
     enable = true;
@@ -37,7 +38,7 @@
           natural_scroll = "enabled";
           dwt = "enabled";
           accel_profile = "flat";
-          pointer_accel = "0.5";
+          pointer_accel = "0.25";
         };
       };
       output = {
