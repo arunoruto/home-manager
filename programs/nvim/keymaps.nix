@@ -13,37 +13,53 @@
     keymaps = 
     [
       {
-        action = ":NvimTreeToggle<cr>";
-        key = "<C-n>";
+        action = ":bnext";
+        key = "<leader>bl";
         options = {
           silent = true;
-          desc = "Nvim Tree: Toggle";
+          desc = "Next buffer tab";
         };
       }
       {
-        action = ":NvimTreeToggle<cr>";
-        key = "<leader>tt";
+        action = ":bprev";
+        key = "<leader>bh";
         options = {
           silent = true;
-          desc = "Nvim Tree: Toggle";
+          desc = "Previous buffer tab";
         };
       }
-      {
-        action = ":NvimTreeRefresh<cr>";
-        key = "<leader>tr";
-        options = {
-          silent = true;
-          desc = "Nvim Tree: Refresh";
-        };
-      }
-      {
-        action = ":NvimTreeFindFile<cr>";
-        key = "<leader>tf";
-        options = {
-          silent = true;
-          desc = "Nvim Tree: Find File";
-        };
-      }
+      #{
+      #  action = ":NvimTreeToggle<cr>";
+      #  key = "<C-n>";
+      #  options = {
+      #    silent = true;
+      #    desc = "Nvim Tree: Toggle";
+      #  };
+      #}
+      #{
+      #  action = ":NvimTreeToggle<cr>";
+      #  key = "<leader>tt";
+      #  options = {
+      #    silent = true;
+      #    desc = "Nvim Tree: Toggle";
+      #  };
+      #}
+      #{
+      #  action = ":NvimTreeRefresh<cr>";
+      #  key = "<leader>tr";
+      #  options = {
+      #    silent = true;
+      #    desc = "Nvim Tree: Refresh";
+      #  };
+      #}
+      #{
+      #  action = ":NvimTreeFindFile<cr>";
+      #  key = "<leader>tf";
+      #  options = {
+      #    silent = true;
+      #    desc = "Nvim Tree: Find File";
+      #  };
+      #}
     ];
   };
 }
