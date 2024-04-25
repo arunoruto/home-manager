@@ -2,6 +2,7 @@
 {
   programs.zsh = {
     enable = true;
+    dotDir = ".config/zsh";
     shellAliases = {
       #sudo = "sudo -E -s ";
       #ls = "eza";
