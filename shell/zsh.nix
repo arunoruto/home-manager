@@ -69,6 +69,7 @@
         esac
       }
 
+      export LS_COLORS="$(vivid generate catppuccin-macchiato)";
     '';
     #antidote = {
     #  enable = true;
