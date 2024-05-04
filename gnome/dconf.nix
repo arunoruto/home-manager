@@ -12,6 +12,10 @@
       picture-uri      = "file://${builtins.getEnv "HOME"}/.local/share/backgrounds/komet/komet.xml";
       picture-uri-dark = "file://${builtins.getEnv "HOME"}/.local/share/backgrounds/komet/komet.xml";
     };
+    # Additional window buttons
+    "org/gnome/desktop/wm/preferences" = {
+      button-layout = "appmenu:minimize,close";
+    };
     # Set some interface options found in tweaks
     "org/gnome/desktop/interface" = {
       show-battery-percentage = true;
@@ -60,6 +64,10 @@
       switch-to-application-9 = [];
     };
     "org/gnome/desktop/wm/keybindings" = {
+      close = [
+        "<Alt>F4"
+        "<Super><Shift>q"
+      ];
       switch-to-workspace-1 = ["<Super>1"];
       switch-to-workspace-2 = ["<Super>2"];
       switch-to-workspace-3 = ["<Super>3"];
