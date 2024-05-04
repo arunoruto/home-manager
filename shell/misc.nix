@@ -14,6 +14,14 @@ in
   programs.lsd = {
     enable = true;
     enableAliases = true;
+    settings = {
+      ignore-globs = [
+        ".DS_Store"
+      ];
+      sorting = {
+        dir-grouping = "first";
+      };
+    };
   };
 
   programs.fzf = {
