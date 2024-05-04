@@ -11,7 +11,7 @@
 
     hugo
     julia
-    #ruff
+    vivid
 
     zsh-autosuggestions
     zsh-syntax-highlighting
