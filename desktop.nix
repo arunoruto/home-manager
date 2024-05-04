@@ -28,6 +28,8 @@
     gnomeExtensions.appindicator
     gnomeExtensions.emoji-selector
     gnomeExtensions.focus
+    #gnomeExtensions.spotify-controller
+    gnomeExtensions.spotify-tray
     gnomeExtensions.tailscale-status
     gnomeExtensions.transparent-top-bar
   ];
