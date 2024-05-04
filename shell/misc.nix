@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 let
   flavour = "macchiato";
   catppuccin-bat = builtins.fetchGit {
@@ -34,6 +34,7 @@ in
       theme = "Monokai Extended";
       #themes = "${catppuccin_bat}/Catppuccin-macchiato.tmTheme";
     };
+    extraPackages = with pkgs.bat-extras; [ batdiff batman batgrep batwatch ];
   };
   home.file.".config/bat/themes/catppuccin" = {
       recursive = true;
