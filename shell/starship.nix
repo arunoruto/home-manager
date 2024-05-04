@@ -24,10 +24,10 @@ in
         "$username"
         "[](fg:surface0 bg:surface1)"
         "$directory"
-        "[](fg:surface1 bg:peach)"
+        "[](fg:surface1 bg:red)"
         "$git_branch"
         "$git_status"
-        "[](fg:peach bg:blue)"
+        "[](fg:red bg:peach)"
         "$c"
         "$elixir"
         "$elm"
@@ -40,11 +40,11 @@ in
         "$nim"
         "$rust"
         "$scala"
-        "[](fg:blue bg:teal)"
+        "[](fg:peach bg:blue)"
         "$docker_context"
-        "[](fg:teal bg:sapphire)"
+        "[](fg:blue bg:green)"
         "$time"
-        "[ ](fg:sapphire)"
+        "[ ](fg:green)"
       ];
 
       username = {
@@ -59,7 +59,7 @@ in
       # represents the current operating system
       os = {
         style = "fg:text bg:surface0";
-        disabled = true; # Disabled by default
+        disabled = false; # Disabled by default
       };
       
       directory = {
@@ -85,97 +85,97 @@ in
       
       c = {
         symbol = " ";
-        style = "fg:surface0 bg:blue";
+        style = "fg:surface0 bg:peach";
         format = "[ $symbol ($version) ]($style)";
       };
       
       docker_context = {
         symbol = " ";
-        style = "fg:surface0 bg:teal";
+        style = "fg:surface0 bg:blue";
         format = "[ $symbol $context ]($style)";
       };
       
       elixir = {
         symbol = " ";
-        style = "fg:surface0 bg:blue";
+        style = "fg:surface0 bg:peach";
         format = "[ $symbol ($version) ]($style)";
       };
       
       elm = {
         symbol = " ";
-        style = "fg:surface0 bg:blue";
+        style = "fg:surface0 bg:peach";
         format = "[ $symbol ($version) ]($style)";
       };
       
       git_branch = {
         symbol = "";
-        style = "fg:surface0 bg:peach";
+        style = "fg:surface0 bg:red";
         format = "[ $symbol $branch ]($style)";
       };
       
       git_status = {
-        style = "fg:surface0 bg:peach";
+        style = "fg:surface0 bg:red";
         format = "[$all_status$ahead_behind ]($style)";
       };
       
       golang = {
         symbol = " ";
-        style = "fg:surface0 bg:blue";
+        style = "fg:surface0 bg:peach";
         format = "[ $symbol ($version) ]($style)";
       };
       
       gradle = {
-        style = "fg:surface0 bg:blue";
+        style = "fg:surface0 bg:peach";
         format = "[ $symbol ($version) ]($style)";
       };
       
       haskell = {
         symbol = " ";
-        style = "fg:surface0 bg:blue";
+        style = "fg:surface0 bg:peach";
         format = "[ $symbol ($version) ]($style)";
       };
       
       java = {
         symbol = " ";
-        style = "fg:surface0 bg:blue";
+        style = "fg:surface0 bg:peach";
         format = "[ $symbol ($version) ]($style)";
       };
       
       julia = {
         symbol = " ";
-        style = "fg:surface0 bg:blue";
+        style = "fg:surface0 bg:peach";
         format = "[ $symbol ($version) ]($style)";
       };
       
       nodejs = {
         symbol = "";
-        style = "fg:surface0 bg:blue";
+        style = "fg:surface0 bg:peach";
         format = "[ $symbol ($version) ]($style)";
       };
       
       nim = {
         symbol = "󰆥 ";
-        style = "fg:surface0 bg:blue";
+        style = "fg:surface0 bg:peach";
         format = "[ $symbol ($version) ]($style)";
       };
       
       rust = {
         symbol = "";
-        style = "fg:surface0 bg:blue";
+        style = "fg:surface0 bg:peach";
         format = "[ $symbol ($version) ]($style)";
       };
       
       scala = {
         symbol = " ";
-        style = "fg:surface0 bg:blue";
+        style = "fg:surface0 bg:peach";
         format = "[ $symbol ($version) ]($style)";
       };
       
       time = {
         disabled = false;
         time_format = "%R"; # Hour:Minute Format
-        style = "fg:surface0 bg:sapphire";
-        format = "[ ♥ $time ]($style)";
+        style = "fg:surface0 bg:green";
+        format = "[ 󱑆 $time ]($style)";
       };
 
       # package.disabled = true;
