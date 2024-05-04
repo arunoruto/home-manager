@@ -10,6 +10,7 @@
         #  javascript = [ "template_string" ];
         #};
       };
+      cmp-nvim-lsp.enable = true;
       nvim-cmp = {
         enable = true;
         autoEnableSources = true;
@@ -60,6 +61,7 @@
       cmp_luasnip         # for autocompletion
       friendly-snippets   # useful snippets
       lspkind-nvim        # vs-code like pictograms
+      cmp-nvim-lsp
     ];
     extraConfigLua = ''
       require("cmp").event:on("confirm_done", require("nvim-autopairs.completion.cmp").on_confirm_done())
