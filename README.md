@@ -12,3 +12,7 @@ nix-shell '<home-manager>' -A install
 ```
 
 Further information can be found at the [home-manager installation docs](https://nix-community.github.io/home-manager/index.xhtml#sec-install-standalone).
+
+# NixVim
+To configure (neo)vim, I am using [nixvim](https://nix-community.github.io/nixvim/) to manage the instance and the plugins.
+Further information are found in the respective [folder](programs/nvim/README.md).
