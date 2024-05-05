@@ -1,17 +1,19 @@
-{ config, lib, ... }:
 let
-  sysconfig = if builtins.pathExists "/etc/nixos/configuration.nix" then
-    (import <nixpkgs/nixos> {}).config
-  else
-    "other";
+  sysconfig =
+    if builtins.pathExists "/etc/nixos/configuration.nix"
+    then (import <nixpkgs/nixos> {}).config
+    else "other";
   nixvim = import (builtins.fetchGit {
     url = "https://github.com/nix-community/nixvim";
-    ref = if (sysconfig == "other") then "main" else "nixos-${sysconfig.system.stateVersion}";
+    ref =
+      if (sysconfig == "other")
+      then "main"
+      else "nixos-${sysconfig.system.stateVersion}";
   });
-in
-{
+in {
   imports = [
     nixvim.homeManagerModules.nixvim
+    #./auto.nix
     ./options.nix
     ./keymaps.nix
     ./plugins
@@ -29,5 +31,4 @@ in
     '';
     clipboard.providers.wl-copy.enable = true;
   };
-
 }
