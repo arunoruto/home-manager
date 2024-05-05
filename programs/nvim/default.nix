@@ -22,6 +22,7 @@ in {
   programs.nixvim = {
     enable = true;
     vimAlias = true;
+    editorconfig.enable = true;
     colorschemes.catppuccin = {
       enable = true;
       flavour = "macchiato";
