@@ -1,4 +1,8 @@
 {
+  config,
+  lib,
+  ...
+}: {
   programs.nixvim = {
     plugins = {
       lsp-format.enable = true;
@@ -79,21 +83,7 @@
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       -- list all LSPs from above
-      -- (maybe try to generate the array from the config above)
-      local lsps = {
-        "bashls",
-        "julials",
-        "lua-ls",
-        "nil_ls",
-        "nixd",
-        "texlab",
-        "pyright",
-        "ruff-lsp",
-        "html",
-        "cssls",
-        "jsonls",
-        "yamlls",
-      }
+      local lsps = {${lib.concatMapStringsSep "," (x: ''"${x}"'') (lib.filter (server: config.programs.nixvim.plugins.lsp.servers."${server}".enable) (lib.attrNames config.programs.nixvim.plugins.lsp.servers))}}
 
       -- combinatination what been done in:
       -- joseans blog: https://www.josean.com/posts/how-to-setup-neovim-2024 (nvim-lspconfig section)
