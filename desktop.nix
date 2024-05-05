@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-{
+{pkgs, ...}: {
   imports = [
     ./programs/steam.nix
 
@@ -7,9 +6,8 @@
     ./sway
     ./hyprland
   ];
-  
-  home.packages = with pkgs;
-  [
+
+  home.packages = with pkgs; [
     gimp
     inkscape
     #jabref
