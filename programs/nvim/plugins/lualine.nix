@@ -1,4 +1,3 @@
-{ ... }:
 {
   programs.nixvim = {
     plugins = {
@@ -28,7 +27,7 @@
           #  "branch"
           #];
           lualine_c = [
-          #  #"%="
+            #  #"%="
           ];
           lualine_x = [];
           #lualine_y = [
@@ -47,12 +46,12 @@
           ];
         };
         inactiveSections = {
-          lualine_a = [ "filename" ];
+          lualine_a = ["filename"];
           lualine_b = [];
           lualine_c = [];
           lualine_x = [];
           lualine_y = [];
-          lualine_z = [ "location" ];
+          lualine_z = ["location"];
         };
         tabline = {
           lualine_a = [];
@@ -66,5 +65,4 @@
       };
     };
   };
-
 }

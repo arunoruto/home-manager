@@ -1,15 +1,14 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   imports = [
+    ./completion
+    ./lsp
+    ./ui
+    ./utils
     ./alpha.nix
     ./auto-session.nix
-    ./comment.nix
-    ./formatting.nix
     ./git.nix
-    ./nvim-cmp.nix
     ./nvim-tree.nix
     ./lualine.nix
-    ./lsp.nix
     ./substitute.nix
     ./telescope.nix
     ./trouble.nix
@@ -34,12 +33,6 @@
       };
       neogit.enable = true;
       surround.enable = true;
-      which-key = {
-        enable = true;
-        registrations = {
-          "<localLeader>l" = "+vimtex";
-        };
-      };
       #startup-nvim.enable = true;
       tmux-navigator.enable = true;
       # https://ejmastnak.com/tutorials/vim-latex/vimscript/
