@@ -1,15 +1,14 @@
 #{ config, pkgs, lib, ... }:
-{ lib, ... }:
-{
+{lib, ...}: {
   dconf.settings = {
     # Time zone settings
-    "org/gnome/desktop/datetime" = { automatic-timezone = true; };
-    "org/gnome/system/location" = { enabled = true; };
+    "org/gnome/desktop/datetime" = {automatic-timezone = true;};
+    "org/gnome/system/location" = {enabled = true;};
     # Wallpaper settings
     "org/gnome/desktop/background" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri      = "file://${builtins.getEnv "HOME"}/.local/share/backgrounds/komet/komet.xml";
+      picture-uri = "file://${builtins.getEnv "HOME"}/.local/share/backgrounds/komet/komet.xml";
       picture-uri-dark = "file://${builtins.getEnv "HOME"}/.local/share/backgrounds/komet/komet.xml";
     };
     # Additional window buttons
@@ -19,8 +18,8 @@
     # Set some interface options found in tweaks
     "org/gnome/desktop/interface" = {
       show-battery-percentage = true;
-    #  color-scheme = "default";
-    #  cursor-theme = "Catppuccin-Macchiato-Dark-Cursors";
+      #  color-scheme = "default";
+      #  cursor-theme = "Catppuccin-Macchiato-Dark-Cursors";
       gtk-theme = lib.mkForce "Catppuccin-Macchiato-Standard-Green-Dark";
       icon-theme = lib.mkForce "candy-icons";
     };
@@ -36,7 +35,8 @@
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       name = "Terminal Super";
       #command = "env WAYLAND_DISPLAY= alacritty";
-      command = "wezterm start --always-new-process";
+      #command = "wezterm start --always-new-process";
+      command = "wezterm";
       binding = "<Super>Return";
     };
     #"org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
@@ -88,5 +88,4 @@
       move-to-workspace-9 = ["<Super><Shift>9"];
     };
   };
-
 }
