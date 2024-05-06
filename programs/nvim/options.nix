@@ -1,13 +1,11 @@
-{ ... }:
-{
-
+{...}: {
   programs.nixvim = {
     options = {
       # tabs & indent
-    	tabstop = 2;
-	    softtabstop = 2;
-	    shiftwidth = 2;
-	    expandtab = true;
+      tabstop = 2;
+      softtabstop = 2;
+      shiftwidth = 2;
+      expandtab = true;
       autoindent = true;
 
       # line numbers
@@ -38,8 +36,7 @@
     };
     globals = {
       mapleader = " ";
-      maplocalleader = " ";
+      maplocalleader = ",";
     };
   };
-
 }
