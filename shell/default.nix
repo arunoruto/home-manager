@@ -1,6 +1,7 @@
 {...}: {
   imports = [
     ./bat.nix
+    ./fzf.nix
     ./editorconfig.nix
     ./misc.nix
     ./starship.nix
