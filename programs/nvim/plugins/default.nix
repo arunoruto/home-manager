@@ -1,14 +1,13 @@
 {pkgs, ...}: {
   imports = [
     ./completion
+    ./notes
     ./lsp
     ./ui
     ./utils
-    ./alpha.nix
     ./auto-session.nix
     ./git.nix
     ./nvim-tree.nix
-    ./lualine.nix
     ./substitute.nix
     ./telescope.nix
     ./trouble.nix
