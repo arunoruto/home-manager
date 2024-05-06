@@ -1,6 +1,8 @@
 {
   imports = [
     ./noice.nix
+    ./alpha.nix
+    ./lualine.nix
   ];
 
   programs.nixvim = {
