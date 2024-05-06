@@ -11,9 +11,8 @@
         servers = {
           bashls.enable = true;
           julials.enable = true;
+          #marksman.enable = true;
           lua-ls.enable = true;
-          nil_ls.enable = true;
-          nixd.enable = true;
           texlab.enable = true;
           # Python
           pyright.enable = true;
@@ -24,6 +23,9 @@
           # Markups
           jsonls.enable = true;
           yamlls.enable = true;
+          # Nix
+          nil_ls.enable = true;
+          nixd.enable = true;
         };
         keymaps = {
           silent = true;
@@ -80,7 +82,7 @@
     };
     extraConfigLua = ''
       -- used to enable autocompletion (assign to every lsp server config)
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
       -- list all LSPs from above
       local lsps = {${lib.concatMapStringsSep "," (x: ''"${x}"'') (lib.filter (server: config.programs.nixvim.plugins.lsp.servers."${server}".enable) (lib.attrNames config.programs.nixvim.plugins.lsp.servers))}}
