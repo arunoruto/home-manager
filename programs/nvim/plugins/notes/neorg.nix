@@ -5,12 +5,17 @@
         enable = true;
         modules = {
           "core.defaults".__empty = null;
-          "core.concealer".__empty = null;
+          "core.concealer" = {
+            config = {
+              icon_preset = "basic";
+            };
+          };
           "core.dirman" = {
             config = {
               workspaces = {
                 notes = "~/Documents/notes";
               };
+              default_workspace = "notes";
             };
           };
         };
