@@ -2,10 +2,17 @@
 
 Follow the steps on the [official nix](https://nixos.org/download/) website. Multi-user is prefered!
 
-Afterwards, home-manager needs to be installed. But before that, some directory changes have to be done:
+Afterwards, home-manager needs to be installed. But before that, some directory changes have to be done (for now it only applies for ubuntu, not debian):
 
 ```sh
 sudo chown $USER:nixbld /nix/var/nix/{profiles,gcroots}/per-user/$USER
+```
+
+Add the home-manager channel (this is the unstable version, for the stable version change `master.tar.gz` to `release-<version, like 23.11>.tar.gz`):
+
+```sh
+nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+nix-channel --update
 ```
 
 Now home-manager can be installed using the following command:
