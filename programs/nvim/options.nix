@@ -30,7 +30,7 @@
       splitright = true;
       splitbelow = true;
 
-      wrap = false;
+      wrap = true;
       cursorline = true;
       mouse = "a";
     };
