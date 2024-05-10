@@ -1,5 +1,6 @@
 {
   imports = [
+    ./actions-preview.nix
     ./comment.nix
     ./which-key.nix
   ];
