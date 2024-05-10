@@ -3,6 +3,7 @@
     ./completion
     ./notes
     ./lsp
+    ./research
     ./ui
     ./utils
     ./auto-session.nix
@@ -41,6 +42,7 @@
     extraPlugins = with pkgs.vimPlugins; [
       nvim-web-devicons
       cheatsheet-nvim
+      plenary-nvim # User by many plugins as dependency
     ];
   };
 }
