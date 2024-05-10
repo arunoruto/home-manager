@@ -2,6 +2,7 @@
   imports = [
     ./actions-preview.nix
     ./comment.nix
+    ./hardtime.nix
     ./which-key.nix
   ];
 
