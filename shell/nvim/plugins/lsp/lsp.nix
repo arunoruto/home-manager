@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: {
   programs.nixvim = {
@@ -13,7 +14,6 @@
           julials.enable = true;
           #marksman.enable = true;
           lua-ls.enable = true;
-          texlab.enable = true;
           # Python
           pyright.enable = true;
           ruff-lsp.enable = true;
@@ -26,6 +26,16 @@
           # Nix
           nil_ls.enable = true;
           nixd.enable = true;
+          # Tex
+          ltex = {
+            enable = true;
+            settings = {
+              language = "en-US";
+              ltex-ls.path = "${pkgs.ltex-ls}";
+              additionalRules.languageModel = "~/.cache/ngrams";
+            };
+          };
+          texlab.enable = true;
         };
         keymaps = {
           silent = true;
@@ -64,15 +74,15 @@
             };
           };
           diagnostic = {
-            "<leader>cd" = {
+            "<leader>dl" = {
               action = "open_float";
               desc = "Line Diagnostics";
             };
-            "[d" = {
+            "<leader>dn" = {
               action = "goto_next";
               desc = "Next Diagnostic";
             };
-            "]d" = {
+            "<leader>dp" = {
               action = "goto_prev";
               desc = "Previous Diagnostic";
             };
@@ -118,5 +128,21 @@
         border = _border
       }
     '';
+  };
+  home = {
+    packages = with pkgs; [
+      ltex-ls
+    ];
+
+    file = {
+      ".cache/ngrams/de".source = pkgs.fetchzip {
+        url = "https://languagetool.org/download/ngram-data/ngrams-de-20150819.zip";
+        hash = "sha256-b+dPqDhXZQpVOGwDJOO4bFTQ15hhOSG6WPCx8RApfNg=";
+      };
+      ".cache/ngrams/en".source = pkgs.fetchzip {
+        url = "https://languagetool.org/download/ngram-data/ngrams-en-20150817.zip";
+        hash = "sha256-v3Ym6CBJftQCY5FuY6s5ziFvHKAyYD3fTHr99i6N8sE=";
+      };
+    };
   };
 }
