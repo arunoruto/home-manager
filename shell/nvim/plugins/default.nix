@@ -1,16 +1,15 @@
 {pkgs, ...}: {
   imports = [
     ./completion
+    ./git
     ./notes
     ./lsp
     ./research
     ./ui
     ./utils
     ./auto-session.nix
-    ./git.nix
     ./nvim-tree.nix
     ./substitute.nix
-    ./telescope.nix
     ./trouble.nix
     ./vim-maximizer.nix
   ];
@@ -31,7 +30,6 @@
         enable = true;
         indent.char = "┊";
       };
-      neogit.enable = true;
       surround.enable = true;
       #startup-nvim.enable = true;
       tmux-navigator.enable = true;
