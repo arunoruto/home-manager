@@ -26,7 +26,6 @@
             keywordLength = 3;
             option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
           }
-          #{name = "copilot";}
           {
             name = "path";
             keywordLength = 3;
@@ -35,6 +34,7 @@
             name = "luasnip";
             keywordLength = 3;
           }
+          {name = "copilot";}
         ];
         #settings = {
         #  completion.completeopt = "menu,menuone,preview,noselect";
