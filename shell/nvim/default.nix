@@ -13,7 +13,7 @@ let
 in {
   imports = [
     nixvim.homeManagerModules.nixvim
-    #./auto.nix
+    ./auto.nix
     ./options.nix
     ./keymaps.nix
     ./plugins
