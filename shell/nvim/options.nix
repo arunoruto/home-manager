@@ -1,4 +1,4 @@
-{...}: {
+{
   programs.nixvim = {
     options = {
       # tabs & indent
@@ -30,7 +30,7 @@
       splitright = true;
       splitbelow = true;
 
-      wrap = true;
+      wrap = false;
       cursorline = true;
       mouse = "a";
     };
