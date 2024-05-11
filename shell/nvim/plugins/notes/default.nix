@@ -1,6 +1,7 @@
 {
   imports = [
     #./headlines.nix
+    ./glow.nix
     ./neorg.nix
   ];
 

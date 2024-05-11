@@ -1,14 +1,17 @@
-{ config, pkgs, ... }:
 {
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ./shell
     ./programs
   ];
 
-  home.packages = with pkgs;
-  [
+  home.packages = with pkgs; [
     speedtest-cli
 
+    glow
     hugo
     julia
     vivid
