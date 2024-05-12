@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   programs.wezterm = {
     enable = true;
     extraConfig = ''
@@ -8,7 +7,8 @@
       config.enable_wayland = false
       config.color_scheme = 'Catppuccin Macchiato'
       config.hide_tab_bar_if_only_one_tab = true
-      config.window_decorations = 'TITLE | RESIZE'
+      -- config.window_decorations = 'TITLE | RESIZE'
+      config.window_decorations = 'RESIZE'
       config.window_frame = {
         active_titlebar_bg = '#24273a',
         inactive_titlebar_bg = '#24273a',
