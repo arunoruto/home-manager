@@ -1,25 +1,24 @@
-{ pkgs, ... }:
-let
+{pkgs, ...}: let
   image = "~/Pictures/wallpapers/anime/cafe-at-night.png";
   lockscreen = "${pkgs.swaylock}/bin/swaylock --image ${image}";
-in
-{
+in {
   imports = [
     ./services.nix
     ./theme.nix
     ./keybindings.nix
     ./waybar.nix
+    # ./swaync.nix
     ./swaylock.nix
   ];
   wayland.windowManager.sway = {
     enable = true;
     config = rec {
       modifier = "Mod4";
-      terminal = "wezterm"; 
+      terminal = "wezterm";
       fonts = {
-        names = [ "FiraCode Nerd Font Mono" ];
+        names = ["FiraCode Nerd Font Mono"];
         style = "Regular";
-        size = 11.0;
+        size = 10.0;
       };
       window = {
         border = 2;
