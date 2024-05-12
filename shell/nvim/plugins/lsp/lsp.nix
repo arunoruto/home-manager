@@ -14,6 +14,9 @@
           julials.enable = true;
           #marksman.enable = true;
           lua-ls.enable = true;
+          # Docker
+          # dockerls.enable = true;
+          # docker-compose-language-service.enable = true;
           # Python
           pyright.enable = true;
           ruff-lsp.enable = true;
@@ -92,19 +95,41 @@
     };
     extraConfigLua = ''
       -- used to enable autocompletion (assign to every lsp server config)
-      local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+      -- local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      capabilities.textDocument.foldingRange = {
+        dynamicRegistration = false,
+        lineFoldingOnly = true
+      }
 
-      -- list all LSPs from above
-      local lsps = {${lib.concatMapStringsSep "," (x: ''"${x}"'') (lib.filter (server: config.programs.nixvim.plugins.lsp.servers."${server}".enable) (lib.attrNames config.programs.nixvim.plugins.lsp.servers))}}
-
-      -- combinatination what been done in:
-      -- joseans blog: https://www.josean.com/posts/how-to-setup-neovim-2024 (nvim-lspconfig section)
-      -- and in this config: https://github.com/pete3n/nixvim-flake/blob/main/config/lsp.nix
-      for _, lsp in pairs(lsps) do
-        require("lspconfig")[lsp].setup({
-          capabilities = capabilities,
-        })
+      local language_servers = require("lspconfig").util.available_servers()
+      for _, ls in ipairs(language_servers) do
+          require('lspconfig')[ls].setup({
+              capabilities = capabilities
+          })
       end
+
+      -- -- list all LSPs from above
+      -- local lsps = {${lib.concatMapStringsSep "," (x: ''"${x}"'') (lib.filter (server: config.programs.nixvim.plugins.lsp.servers."${server}".enable) (lib.attrNames config.programs.nixvim.plugins.lsp.servers))}}
+      -- for i, v in ipairs(lsps) do
+      --   lsps[i] = lsps[i]:gsub("-", "_")
+      --   -- if v == "ruff-lsp" then
+      --   --   lsps[i] = "ruff_lsp"
+      --   -- elseif v == "lua-ls" then
+      --   --   lsps[i] = "lua_ls"
+      --   -- end
+      -- end
+
+      -- print(unpack(require("lspconfig").util.available_servers()))
+
+      -- -- combinatination what been done in:
+      -- -- joseans blog: https://www.josean.com/posts/how-to-setup-neovim-2024 (nvim-lspconfig section)
+      -- -- and in this config: https://github.com/pete3n/nixvim-flake/blob/main/config/lsp.nix
+      -- for _, lsp in pairs(lsps) do
+      --   require("lspconfig")[lsp].setup({
+      --     capabilities = capabilities,
+      --   })
+      -- end
 
       local _border = "rounded"
 
