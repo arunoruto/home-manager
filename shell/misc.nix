@@ -23,7 +23,6 @@
 
     atuin = {
       enable = true;
-      enableZshIntegration = true;
       flags = [
         "--disable-up-arrow"
       ];
@@ -31,17 +30,14 @@
 
     thefuck = {
       enable = true;
-      enableZshIntegration = true;
     };
 
     yazi = {
       enable = true;
-      enableZshIntegration = true;
     };
 
     zoxide = {
       enable = true;
-      enableZshIntegration = true;
       options = [
         "--cmd cd"
       ];
@@ -49,7 +45,6 @@
 
     direnv = {
       enable = true;
-      enableZshIntegration = true;
       nix-direnv.enable = true;
     };
 
