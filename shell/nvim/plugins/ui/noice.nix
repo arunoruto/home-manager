@@ -2,7 +2,7 @@
   programs.nixvim.plugins.noice = {
     enable = true;
     notify = {
-      enabled = false;
+      enabled = true;
     };
     messages = {
       enabled = true; # Adds a padding-bottom to neovim statusline when set to false for some reason
