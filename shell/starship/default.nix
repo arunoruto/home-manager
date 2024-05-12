@@ -28,7 +28,7 @@ in {
         };
         directory = {
           truncation_length = 2;
-          truncation_symbol = "..";
+          truncation_symbol = "../";
           style = "bold lavender";
         };
         palette = "catppuccin_${flavour}";
