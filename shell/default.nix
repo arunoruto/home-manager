@@ -7,6 +7,7 @@
     ./editorconfig.nix
     ./fzf.nix
     ./misc.nix
+    ./nushell.nix
     ./zsh.nix
   ];
 }
