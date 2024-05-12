@@ -16,7 +16,7 @@
     julia
     vivid
 
-    zsh-autosuggestions
-    zsh-syntax-highlighting
+    # zsh-autosuggestions
+    # zsh-syntax-highlighting
   ];
 }
