@@ -5,12 +5,12 @@
     ./hardtime.nix
     ./indent-blankline.nix
     ./telescope.nix
+    ./ufo.nix
     ./which-key.nix
   ];
 
   programs.nixvim = {
     plugins = {
-      #nvim-ufo.enable = true;
     };
   };
 }
