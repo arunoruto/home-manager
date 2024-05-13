@@ -24,6 +24,8 @@ in {
         };
         hostname = {
           ssh_only = true;
+          style = "bold dimmed green";
+          format = "[$ssh_symbol$hostname]($style): ";
         };
         directory = {
           truncation_length = 2;
