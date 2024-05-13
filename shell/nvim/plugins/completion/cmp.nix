@@ -37,15 +37,12 @@
             }
             {name = "copilot";}
           ];
-          #settings = {
-          #  completion.completeopt = "menu,menuone,preview,noselect";
+          completion.completeopt = "menu,menuone,preview,noselect";
           #  snippet.expand = ''
           #    function(args)
           #      require('luasnip').lsp_expand(args.body)
           #    end
           #  '';
-          #};
-          completion.completeopt = "menu,menuone,preview,noselect";
           #snippet.expand = {
           #  __raw = ''
           #    function(args)

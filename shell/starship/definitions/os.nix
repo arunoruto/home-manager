@@ -5,7 +5,7 @@
         symbols = {
           Alpaquita = " ";
           Alpine = " ";
-          # AlmaLinux = " ";
+          AlmaLinux = " ";
           Amazon = " ";
           Android = " ";
           Arch = " ";
@@ -21,7 +21,7 @@
           Gentoo = " ";
           HardenedBSD = "󰞌 ";
           Illumos = "󰈸 ";
-          # Kali = " ";
+          Kali = " ";
           Linux = " ";
           Mabox = " ";
           Macos = " ";
@@ -38,13 +38,13 @@
           Raspbian = " ";
           Redhat = " ";
           RedHatEnterprise = " ";
-          # RockyLinux = " ";
+          RockyLinux = " ";
           Redox = "󰀘 ";
           Solus = "󰠳 ";
           SUSE = " ";
           Ubuntu = " ";
           Unknown = " ";
-          # Void = " ";
+          Void = " ";
           Windows = "󰍲 ";
         };
       };

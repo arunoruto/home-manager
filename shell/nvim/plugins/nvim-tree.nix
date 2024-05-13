@@ -1,4 +1,3 @@
-{ ... }:
 {
   programs.nixvim = {
     globals = {
@@ -16,7 +15,7 @@
           indentMarkers.enable = true;
         };
         actions.windowPicker.enable = false;
-        filters.custom = [ ".DS_Store" ];
+        filters.custom = [".DS_Store"];
         git = {
           enable = true;
           ignore = false;
@@ -33,12 +32,51 @@
       };
     };
     keymaps = [
-      { mode = "n"; key = "<C-n>";      action = "<cmd>NvimTreeToggle<CR>";         options = { silent = true; desc = "Toggle file explorer"; }; }
-      { mode = "n"; key = "<leader>ee"; action = "<cmd>NvimTreeToggle<CR>";         options = { silent = true; desc = "Toggle file explorer"; }; }
-      { mode = "n"; key = "<leader>er"; action = "<cmd>NvimTreeRefresh<CR>";        options = { silent = true; desc = "Refresh file explorer"; }; }
-      { mode = "n"; key = "<leader>ef"; action = "<cmd>NvimTreeFindFileToggle<CR>"; options = { silent = true; desc = "Toggle file exporer on current file"; }; }
-      { mode = "n"; key = "<leader>ec"; action = "<cmd>NvimTreeCollapse<CR>";       options = { silent = true; desc = "Collapse file exporer"; }; }
+      {
+        mode = "n";
+        key = "<C-n>";
+        action = "<cmd>NvimTreeToggle<CR>";
+        options = {
+          silent = true;
+          desc = "Toggle file explorer";
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>ee";
+        action = "<cmd>NvimTreeToggle<CR>";
+        options = {
+          silent = true;
+          desc = "Toggle file explorer";
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>er";
+        action = "<cmd>NvimTreeRefresh<CR>";
+        options = {
+          silent = true;
+          desc = "Refresh file explorer";
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>ef";
+        action = "<cmd>NvimTreeFindFileToggle<CR>";
+        options = {
+          silent = true;
+          desc = "Toggle file exporer on current file";
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>ec";
+        action = "<cmd>NvimTreeCollapse<CR>";
+        options = {
+          silent = true;
+          desc = "Collapse file exporer";
+        };
+      }
     ];
   };
-
 }

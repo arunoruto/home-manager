@@ -12,11 +12,11 @@
         servers = {
           bashls.enable = true;
           julials.enable = true;
-          #marksman.enable = true;
+          marksman.enable = true;
           lua-ls.enable = true;
           # Docker
-          # dockerls.enable = true;
-          # docker-compose-language-service.enable = true;
+          dockerls.enable = true;
+          docker-compose-language-service.enable = true;
           # Python
           pyright.enable = true;
           ruff-lsp.enable = true;

@@ -23,7 +23,6 @@
       };
       #dressing.enable = true;
       surround.enable = true;
-      #startup-nvim.enable = true;
       tmux-navigator.enable = true;
       # https://ejmastnak.com/tutorials/vim-latex/vimscript/
       vimtex.enable = true;
