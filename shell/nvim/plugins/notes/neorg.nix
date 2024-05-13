@@ -21,14 +21,25 @@
         };
       };
     };
-    extraPlugins = [
-      (pkgs.vimUtils.buildVimPlugin {
-        name = "lua-utils";
-        src = builtins.fetchGit {
-          url = "https://github.com/nvim-neorg/lua-utils.nvim";
-          ref = "main";
-        };
-      })
+    extraLuaPackages = with pkgs.luaPackages; [
+      lua-utils-nvim
+      nvim-nio
+      pathlib-nvim
     ];
+    # extraLuaPackages = luaPkgs:
+    #   with luaPkgs; [
+    #     lua-utils-nvim
+    #     nvim-nio
+    #     pathlib-nvim
+    #   ];
+    # extraPlugins = [
+    #   (pkgs.vimUtils.buildVimPlugin {
+    #     name = "lua-utils";
+    #     src = builtins.fetchGit {
+    #       url = "https://github.com/nvim-neorg/lua-utils.nvim";
+    #       ref = "main";
+    #     };
+    #   })
+    # ];
   };
 }

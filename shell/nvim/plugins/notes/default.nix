@@ -2,7 +2,7 @@
   imports = [
     #./headlines.nix
     ./glow.nix
-    #./neorg.nix
+    # ./neorg.nix
   ];
 
   programs.nixvim = {

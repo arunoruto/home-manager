@@ -1,4 +1,4 @@
-let
+{pkgs, ...}: let
   sysconfig =
     if builtins.pathExists "/etc/nixos/configuration.nix"
     then (import <nixpkgs/nixos> {}).config
@@ -30,6 +30,9 @@ in {
     extraConfigLua = ''
       vim.cmd("let g:netrw_liststyle = 3")
     '';
+    extraPackages = with pkgs; [
+      luajit
+    ];
     clipboard.providers.wl-copy.enable = true;
   };
 }
