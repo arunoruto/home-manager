@@ -1,4 +1,9 @@
 {pkgs, ...}: {
+  imports = [
+    ./catppuccin.nix
+    # ./pomodoro.nix
+  ];
+
   programs.tmux = {
     enable = true;
     clock24 = true;
@@ -8,29 +13,6 @@
     mouse = true;
     baseIndex = 1;
     plugins = with pkgs; [
-      {
-        plugin = tmuxPlugins.catppuccin;
-        extraConfig = ''
-          set -g @catppuccin_flavour "macchiato"
-
-          set -g @catppuccin_window_left_separator ""
-          set -g @catppuccin_window_right_separator " "
-          set -g @catppuccin_window_middle_separator "█ "
-          set -g @catppuccin_window_number_position "left"
-
-          set -g @catppuccin_window_default_fill "number"
-          set -g @catppuccin_window_default_text "#W"
-
-          set -g @catppuccin_window_current_fill "number"
-          set -g @catppuccin_window_current_text "#W"
-
-          set -g @catppuccin_status_left_separator  " "
-          set -g @catppuccin_status_right_separator ""
-          set -g @catppuccin_status_fill "icon"
-          set -g @catppuccin_status_connect_separator "no"
-          set -g @catppuccin_status_modules_right "session"
-        '';
-      }
       #   {
       #     plugin = tmuxPlugins.continuum;
       #     extraConfig = ''
@@ -71,6 +53,8 @@
       # maximize pane
       bind -r m resize-pane -Z
 
+      # Set copy command
+      set -s copy-command 'wl-copy'
       # select and copy like in vim
       bind-key -T copy-mode-vi 'v' send -X begin-selection
       bind-key -T copy-mode-vi 'y' send -X copy-selection
