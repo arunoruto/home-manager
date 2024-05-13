@@ -21,7 +21,7 @@
         path = "${config.xdg.dataHome}/zsh/history";
       };
       #autosuggestion.enable = true;
-      enableAutosuggestions = false;
+      autosuggestion.enable = false;
       enableCompletion = false;
 
       initExtra = ''

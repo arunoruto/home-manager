@@ -21,15 +21,7 @@
         mode = "tabs";
         separatorStyle = "slant";
       };
-      nvim-cmp = {
-        enable = true;
-        autoEnableSources = true;
-      };
       #dressing.enable = true;
-      indent-blankline = {
-        enable = true;
-        indent.char = "┊";
-      };
       surround.enable = true;
       #startup-nvim.enable = true;
       tmux-navigator.enable = true;

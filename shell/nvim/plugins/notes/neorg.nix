@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   programs.nixvim = {
     plugins = {
       neorg = {
@@ -21,5 +21,14 @@
         };
       };
     };
+    extraPlugins = [
+      (pkgs.vimUtils.buildVimPlugin {
+        name = "lua-utils";
+        src = builtins.fetchGit {
+          url = "https://github.com/nvim-neorg/lua-utils.nvim";
+          ref = "main";
+        };
+      })
+    ];
   };
 }

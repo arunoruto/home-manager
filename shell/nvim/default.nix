@@ -25,7 +25,7 @@ in {
     editorconfig.enable = true;
     colorschemes.catppuccin = {
       enable = true;
-      flavour = "macchiato";
+      settings.flavour = "macchiato";
     };
     extraConfigLua = ''
       vim.cmd("let g:netrw_liststyle = 3")
