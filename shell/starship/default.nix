@@ -1,8 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}: let
+let
   flavour = "macchiato";
   catppuccin-starship = builtins.fetchGit {
     url = "https://github.com/catppuccin/starship";
@@ -17,7 +13,7 @@ in {
     enable = true;
     settings =
       {
-        format = "$directory$character";
+        format = "$hostname$directory$character";
         # format = "$directory";
         right_format = "$all";
         add_newline = true;
@@ -25,6 +21,9 @@ in {
           success_symbol = "[[󰄛](green) ❯](maroon)";
           error_symbol = "[❯](red)";
           vimcmd_symbol = "[❮](green)";
+        };
+        hostname = {
+          ssh_only = true;
         };
         directory = {
           truncation_length = 2;
