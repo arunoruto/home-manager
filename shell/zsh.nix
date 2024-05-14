@@ -18,6 +18,7 @@ in {
         #tsen = "tailscale status | grep 'offers exit node' | fzf | tr -s ' ' | cut -d' ' -f2";
       };
       sessionVariables = {
+        XAUTHORITY = "$HOME/.Xauthority";
         PATH = "$HOME/.bin:$PATH";
         TEST = "1234";
       };
