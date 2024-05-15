@@ -18,6 +18,7 @@
           dockerls.enable = true;
           docker-compose-language-service.enable = true;
           # Python
+          pylsp.enable = true;
           pyright.enable = true;
           ruff-lsp.enable = true;
           # Web & co.
