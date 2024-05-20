@@ -37,6 +37,7 @@ in {
       terminal = 0.975;
     };
     targets = {
+      kde.enable = false;
       nixvim.enable = false;
     };
   };
