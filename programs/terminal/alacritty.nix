@@ -1,22 +1,9 @@
-{pkgs, ...}: let
-  catppuccin-alacritty = builtins.fetchGit {
-    url = "https://github.com/catppuccin/alacritty";
-    ref = "refs/tags/yaml";
-  };
-in {
+{
   programs.alacritty = {
     enable = true;
     settings = {
-      # import = [
-      #   "~/.config/alacritty/catppuccin/catppuccin-macchiato.yml"
-      # ];
       shell = {
         program = "zsh";
-        #args = [
-        #  "-l"
-        #  "-c"
-        #  "tmux attach || tmux"
-        #];
       };
       window = {
         decorations = "full";
@@ -25,6 +12,7 @@ in {
           lines = 36;
         };
         # opacity = 1;
+        blur = true;
       };
       # font = {
       #   size = 12;
@@ -47,7 +35,4 @@ in {
       # };
     };
   };
-
-  # Theme for alacritty
-  home.file.".config/alacritty/catppuccin/catppuccin-macchiato.yml".source = "${catppuccin-alacritty}/catppuccin-macchiato.yml";
 }
