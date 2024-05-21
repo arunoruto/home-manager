@@ -20,9 +20,13 @@ in {
     };
     fonts = {
       serif = {
-        name = "Roboto";
-        package = pkgs.roboto;
+        name = "Cantarell";
+        package = pkgs.cantarell-fonts;
       };
+      # serif = {
+      #   name = "Roboto";
+      #   package = pkgs.roboto;
+      # };
       sansSerif = config.stylix.fonts.serif;
       # sansSerif = {
       #   name = "Roboto Serif";
@@ -39,6 +43,7 @@ in {
     targets = {
       kde.enable = false;
       nixvim.enable = false;
+      mako.enable = false;
     };
   };
 }
