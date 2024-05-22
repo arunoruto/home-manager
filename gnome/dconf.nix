@@ -1,6 +1,6 @@
 {lib, ...}: let
   # wallpaper = "file://${builtins.getEnv "HOME"}/.local/share/backgrounds/komet/komet.xml";
-  wallpaper = "file://${builtins.getEnv "HOME"}/Pictures/wallpapers/art/kanagawa/kanagawa-van-gogh.jpg";
+  # wallpaper = "file://${builtins.getEnv "HOME"}/Pictures/wallpapers/art/kanagawa/kanagawa-van-gogh.jpg";
 in {
   dconf.settings = {
     # Time zone settings
@@ -16,6 +16,12 @@ in {
     # Additional window buttons
     "org/gnome/desktop/wm/preferences" = {
       button-layout = "appmenu:minimize,close";
+    };
+    # Mouse and touchpad settings
+    "org/gnome/desktop/peripherals/touchpad" = {
+      speed = 0.0;
+      tap-to-click = true;
+      two-finger-scrolling-enabled = true;
     };
     # Set some interface options found in tweaks
     "org/gnome/desktop/interface" = {
