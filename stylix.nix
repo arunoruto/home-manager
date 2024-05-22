@@ -6,7 +6,8 @@
 }: let
   stylix = builtins.fetchGit {
     url = "https://github.com/danth/stylix";
-    ref = "release-23.11";
+    ref = "master";
+    # ref = "release-23.11";
   };
 in {
   imports = [(import stylix).homeManagerModules.stylix];
