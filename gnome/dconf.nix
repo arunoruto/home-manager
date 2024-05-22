@@ -19,9 +19,11 @@ in {
     };
     # Mouse and touchpad settings
     "org/gnome/desktop/peripherals/touchpad" = {
-      speed = 0.0;
-      tap-to-click = true;
+      # speed = 0.0;
+      # tap-to-click = true;
       two-finger-scrolling-enabled = true;
+      natural-scroll = true;
+      edge-scrolling-enabled = false;
     };
     # Set some interface options found in tweaks
     "org/gnome/desktop/interface" = {
