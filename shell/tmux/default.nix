@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./catppuccin.nix
-    # ./pomodoro.nix
+    ./pomodoro.nix
   ];
 
   programs.tmux = {
@@ -31,6 +31,7 @@
       tmuxPlugins.vim-tmux-navigator
     ];
     extraConfig = ''
+      # set -g status-right "#{pomodoro_status}"
       # https://stackoverflow.com/questions/41783367/tmux-tmux-true-color-is-not-working-properly/41786092#41786092
       set-option -sa terminal-overrides ",xterm*:Tc"
 

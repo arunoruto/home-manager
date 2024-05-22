@@ -1,3 +1,5 @@
+# Some nice tips:
+# https://pragmaticpineapple.com/four-useful-fzf-tricks-for-your-terminal/
 {
   programs = {
     fzf = {
@@ -16,7 +18,8 @@
         '';
 
         FZF_CTRL_T_OPTIONS = "--prview 'bat -n --color=always --line-range :500 {}'";
-        FZF_ALT_C_OPTIONS = "--prview 'eza --tree --color=always {} | head -200'";
+        FZF_ALT_C_OPTIONS = "--prview 'lsd --tree --color=always {} | head -200'";
+        # FZF_ALT_C_OPTIONS = "--prview 'eza --tree --color=always {} | head -200'";
       };
 
       initExtra = ''
@@ -25,10 +28,11 @@
           shift
 
           case "$command" in
-            cd)           fzf --preview 'eza --tree --level=2 --color=always {} | head -200' "$@" ;;
+            # cd)           fzf --preview 'eza --tree --level=2 --color=always {} | head -200' "$@" ;;
+            cd)           fzf --preview "lsd --tree --depth=2 --color=always {} | head -200" "$@" ;;
             export|unset) fzf --preview "'eval 'echo \$' {}" "$@" ;;
-            ssh)          fzf --preview 'dig {}' "$@" ;;
-            *)            fzf --preview "--preview 'bat -n --color=always --line-range :500 {}'" "$@" ;;
+            ssh)          fzf --preview "dig {}" "$@" ;;
+            *)            fzf --preview "bat -n --color=always --line-range :500 {}" "$@" ;;
           esac
         }
       '';

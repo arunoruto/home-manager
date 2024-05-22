@@ -11,7 +11,7 @@ in {
       config = {
         #paging = "never";
         #style = "plain";
-        theme = "Monokai Extended";
+        # theme = "Monokai Extended";
         #themes = "${catppuccin_bat}/Catppuccin-macchiato.tmTheme";
       };
       extraPackages = with pkgs.bat-extras; [batdiff batman batgrep batwatch];

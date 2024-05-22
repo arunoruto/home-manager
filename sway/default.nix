@@ -36,6 +36,7 @@ in {
           xkb_variant = "nodeadkeys";
         };
         "type:touchpad" = {
+          click_method = "clickfinger";
           left_handed = "disabled";
           tap = "enabled";
           natural_scroll = "enabled";
@@ -46,7 +47,7 @@ in {
       };
       output = {
         "*" = {
-          bg = "${image} fill";
+          # bg = "${image} fill";
           scale = "1.25";
         };
       };

@@ -9,6 +9,7 @@
     ./ui
     ./utils
     ./auto-session.nix
+    ./linting.nix
     ./nvim-tree.nix
     ./substitute.nix
     ./trouble.nix

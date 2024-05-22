@@ -1,6 +1,9 @@
-{ pkgs, lib, ... }:
 {
-	# Allow unfree software
+  pkgs,
+  lib,
+  ...
+}: {
+  # Allow unfree software
   nixpkgs = {
     config = {
       allowUnfree = true;
@@ -30,7 +33,7 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   # This is now done in the respective client and server files
-  #home.packages = with pkgs; 
+  #home.packages = with pkgs;
   #[
   #];
 
@@ -40,7 +43,6 @@
   #  liberation_ttf # Times New Roman, Arial, and Courier New
   #  (nerdfonts.override { fonts = [ "FiraCode" ]; })
   #];
-
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -63,7 +65,7 @@
       --disable-gpu-driver-workarounds
     '';
   };
-  
+
   programs.ssh = {
     enable = true;
     extraConfig = ''
@@ -96,5 +98,4 @@
     EDITOR = "nvim";
     WINIT_UNIX_BACKEND = "x11";
   };
-
 }

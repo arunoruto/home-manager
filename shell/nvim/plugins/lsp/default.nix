@@ -1,6 +1,6 @@
 {
   imports = [
-    ./conform.nix
+    # ./conform.nix
     ./fidget.nix
     # ./hlchunk.nix
     ./lsp.nix

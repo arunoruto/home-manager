@@ -3,8 +3,8 @@
     ./alpha.nix
     ./baleia.nix
     ./lualine.nix
-    ./noice.nix
-    # ./notify.nix
+    # ./noice.nix
+    ./notify.nix
   ];
 
   programs.nixvim = {

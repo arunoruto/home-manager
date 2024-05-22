@@ -1,5 +1,7 @@
-#{ config, pkgs, lib, ... }:
-{lib, ...}: {
+{lib, ...}: let
+  # wallpaper = "file://${builtins.getEnv "HOME"}/.local/share/backgrounds/komet/komet.xml";
+  # wallpaper = "file://${builtins.getEnv "HOME"}/Pictures/wallpapers/art/kanagawa/kanagawa-van-gogh.jpg";
+in {
   dconf.settings = {
     # Time zone settings
     "org/gnome/desktop/datetime" = {automatic-timezone = true;};
@@ -8,19 +10,27 @@
     "org/gnome/desktop/background" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "file://${builtins.getEnv "HOME"}/.local/share/backgrounds/komet/komet.xml";
-      picture-uri-dark = "file://${builtins.getEnv "HOME"}/.local/share/backgrounds/komet/komet.xml";
+      # picture-uri = wallpaper;
+      # picture-uri-dark = wallpaper;
     };
     # Additional window buttons
     "org/gnome/desktop/wm/preferences" = {
       button-layout = "appmenu:minimize,close";
+    };
+    # Mouse and touchpad settings
+    "org/gnome/desktop/peripherals/touchpad" = {
+      # speed = 0.0;
+      # tap-to-click = true;
+      two-finger-scrolling-enabled = true;
+      natural-scroll = true;
+      edge-scrolling-enabled = false;
     };
     # Set some interface options found in tweaks
     "org/gnome/desktop/interface" = {
       show-battery-percentage = true;
       #  color-scheme = "default";
       #  cursor-theme = "Catppuccin-Macchiato-Dark-Cursors";
-      gtk-theme = lib.mkForce "Catppuccin-Macchiato-Standard-Green-Dark";
+      # gtk-theme = lib.mkForce "Catppuccin-Macchiato-Standard-Green-Dark";
       icon-theme = lib.mkForce "candy-icons";
     };
     # Set list of custom keybinding

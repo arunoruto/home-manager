@@ -1,14 +1,12 @@
-{ pkgs, ... }:
-let
+{pkgs, ...}: let
   flavor = "macchiato";
   catppuccin-swaylock = builtins.fetchGit {
     url = "https://github.com/catppuccin/swaylock";
     ref = "main";
   };
-in
-{
+in {
   programs.swaylock = {
     enable = true;
   };
-  home.file.".config/swaylock/config".source = "${catppuccin-swaylock}/themes/macchiato.conf";
+  # home.file.".config/swaylock/config".source = "${catppuccin-swaylock}/themes/macchiato.conf";
 }
