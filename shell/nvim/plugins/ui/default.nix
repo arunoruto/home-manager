@@ -3,7 +3,7 @@
     ./alpha.nix
     ./baleia.nix
     ./lualine.nix
-    ./noice.nix
+    # ./noice.nix
     ./notify.nix
   ];
 
