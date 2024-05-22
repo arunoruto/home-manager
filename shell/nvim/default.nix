@@ -31,7 +31,9 @@ in {
       vim.cmd("let g:netrw_liststyle = 3")
     '';
     extraPackages = with pkgs; [
+      deadnix
       luajit
+      ruff
     ];
     clipboard.providers.wl-copy.enable = true;
   };
