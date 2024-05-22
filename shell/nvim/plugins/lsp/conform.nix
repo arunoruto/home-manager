@@ -10,8 +10,9 @@
           lua = ["stylua"];
           markdown = [["prettierd" "prettier"]];
           nix = ["alejandra"];
-          python = [["ruff_fix" "ruff_format"]];
-          yaml = ["yamllint" "yamlfmt"];
+          python = ["ruff_fix" "ruff_format"];
+          json = ["yq" ];
+          yaml = ["yamllint" "yamlfmt" "yq"];
           "_" = ["trim_whitespace"];
         };
         formatOnSave = {
