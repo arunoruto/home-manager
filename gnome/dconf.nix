@@ -97,5 +97,8 @@ in {
       move-to-workspace-8 = ["<Super><Shift>8"];
       move-to-workspace-9 = ["<Super><Shift>9"];
     };
+    "com/github/stunkymonkey/nautilus-open-any-terminal" = {
+      terminal = "wezterm";
+    };
   };
 }
