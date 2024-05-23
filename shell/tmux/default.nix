@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./catppuccin.nix
-    ./pomodoro.nix
+    #./pomodoro.nix
   ];
 
   programs.tmux = {

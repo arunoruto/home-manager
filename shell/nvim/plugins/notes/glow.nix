@@ -3,10 +3,16 @@
     extraPlugins = [
       (pkgs.vimUtils.buildVimPlugin {
         name = "glow";
-        src = builtins.fetchGit {
-          url = "https://github.com/ellisonleao/glow.nvim";
-          ref = "main";
+        src = pkgs.fetchFromGitHub {
+          owner = "ellisonleao";
+          repo = "glow.nvim";
+          rev = "0.2.0";
+          hash = "sha256-TTbS6jDC67MB9iJDyFaLzqAci7cWFdNVFSzrwNLn6fc=";
         };
+        # src = builtins.fetchGit {
+        #   url = "https://github.com/ellisonleao/glow.nvim";
+        #   ref = "main";
+        # };
       })
     ];
     extraConfigLua = ''

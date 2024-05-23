@@ -1,9 +1,10 @@
 {pkgs, ...}: let
   flavor = "Macchiato";
-  catppuccin_sway = builtins.fetchGit {
-    url = "https://github.com/catppuccin/i3";
-    ref = "main";
-  };
+  catppuccin_sway = "";
+  # catppuccin_sway = builtins.fetchGit {
+  #   url = "https://github.com/catppuccin/i3";
+  #   ref = "main";
+  # };
 in {
   wayland.windowManager.sway = {
     extraConfigEarly = ''
@@ -101,5 +102,5 @@ in {
   };
 
   # Catppuccin themes for sway
-  home.file.".config/sway/catppuccin-macchiato".source = "${catppuccin_sway}/themes/catppuccin-macchiato";
+  # home.file.".config/sway/catppuccin-macchiato".source = "${catppuccin_sway}/themes/catppuccin-macchiato";
 }

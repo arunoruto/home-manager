@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   imports = [
-    ./programs/steam.nix
+    #./programs/steam.nix
 
     ./gnome
     ./sway

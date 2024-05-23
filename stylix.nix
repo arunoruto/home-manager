@@ -3,16 +3,10 @@
   config,
   pkgs,
   ...
-}: let
-  stylix = builtins.fetchGit {
-    url = "https://github.com/danth/stylix";
-    ref = "release-23.11";
-  };
-in {
-  imports = [(import stylix).homeManagerModules.stylix];
+}: {
   stylix = {
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-macchiato.yaml";
-    image = ~/Pictures/wallpapers/art/kanagawa/kanagawa-van-gogh.jpg;
+    image = "${config.home.homeDirectory}/Pictures/wallpapers/art/kanagawa/kanagawa-van-gogh.jpg";
     cursor = {
       name = "Catppuccin-Macchiato-Dark-Cursors";
       package = pkgs.catppuccin-cursors.macchiatoDark;

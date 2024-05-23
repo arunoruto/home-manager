@@ -1,12 +1,4 @@
 {pkgs, ...}:
-#let
-#  flavour = "macchiato";
-#  colour = "green";
-#  catppuccin-lazygit = builtins.fetchGit {
-#    url = "https://github.com/catppuccin/lazygit";
-#    ref = "main";
-#  };
-#in
 {
   home.packages = with pkgs; [
     glab # Gitlab CLI tool

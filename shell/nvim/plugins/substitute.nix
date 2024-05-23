@@ -4,10 +4,13 @@
     extraPlugins = with pkgs.vimPlugins; [
       (pkgs.vimUtils.buildVimPlugin {
         name = "substitute";
-        src = builtins.fetchGit {
-          url = "https://github.com/gbprod/substitute.nvim";
-          ref = "main";
+        src = pkgs.fetchFromGitHub {
+          owner = "gbprod";
+          repo = "substitute.nvim";
+          rev = "v2.0.0";
+          sha256 = "sha256-gR2WaBnqTSeBxMuUTjii+BOI0T8+C+poAofk17/Jxkk=";
         };
+
       })
     ];
     keymaps = [

@@ -98,8 +98,8 @@
     xwayland.enable = true;
   };
 
-  home.packages = with pkgs; [
-    wofi
-    mpvpaper
-  ];
+  # home.packages = with pkgs; [
+  #   wofi
+  #   mpvpaper
+  # ];
 }

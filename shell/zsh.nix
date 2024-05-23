@@ -1,8 +1,9 @@
 {config, ...}: let
-  zsh-sh-catppucin = builtins.fetchGit {
-    url = "https://github.com/catppuccin/zsh-syntax-highlighting";
-    ref = "main";
-  };
+  zsh-sh-catppuccin = "";
+  #zsh-sh-catppuccin = builtins.fetchGit {
+  #  url = "https://github.com/catppuccin/zsh-syntax-highlighting";
+  #  ref = "main";
+  #};
 in {
   programs = {
     zsh = {
@@ -53,7 +54,7 @@ in {
         eval "tailscale completion zsh &> ~/.config/zsh/_tailscale"
         source ~/.config/zsh/_tailscale
 
-        source ${zsh-sh-catppucin}/themes/catppuccin_macchiato-zsh-syntax-highlighting.zsh
+        #source ${zsh-sh-catppuccin}/themes/catppuccin_macchiato-zsh-syntax-highlighting.zsh
       '';
       antidote = {
         enable = true;

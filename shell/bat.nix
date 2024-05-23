@@ -1,9 +1,10 @@
 {pkgs, ...}: let
   #flavour = "macchiato";
-  catppuccin-bat = builtins.fetchGit {
-    url = "https://github.com/catppuccin/bat";
-    ref = "main";
-  };
+  catppuccin-bat = "";
+  #catppuccin-bat = builtins.fetchGit {
+  #  url = "https://github.com/catppuccin/bat";
+  #  ref = "main";
+  #};
 in {
   programs = {
     bat = {
@@ -25,8 +26,8 @@ in {
     };
   };
 
-  home.file.".config/bat/themes/catppuccin" = {
-    recursive = true;
-    source = "${catppuccin-bat}";
-  };
+  #home.file.".config/bat/themes/catppuccin" = {
+  #  recursive = true;
+  #  source = "${catppuccin-bat}";
+  #};
 }

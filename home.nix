@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  user,
   ...
 }: {
   # Allow unfree software
@@ -13,16 +14,18 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  # imports = [
-  #   ./imports.nix
-  # ];
+  imports = [
+    ./imports.nix
+  ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home = {
-    # username = ''${builtins.getEnv "USER"}'';
-    # homeDirectory = ''${builtins.getEnv "HOME"}'';
-    username = "mirza";
-    homeDirectory = "/home/mirza";
+    #username = builtins.getEnv "USER";
+    #homeDirectory = builtins.getEnv "HOME";
+    #username = ''${builtins.getEnv "USER"}'';
+    #homeDirectory = ''${builtins.getEnv "HOME"}'';
+    username = user;
+    homeDirectory = "/home/${user}";
   };
 
   # This value determines the Home Manager release that your configuration is
@@ -70,23 +73,23 @@
     '';
   };
 
-  # programs.ssh = {
-  #   enable = true;
-  #   extraConfig = ''
-  #     Host kyuubi.tail
-  #         HostName kyuubi
-  #         User mar
-  #         ForwardX11 yes
-  #     Host ultron.tail
-  #         Hostname ultron
-  #         User mar
-  #         ForwardX11 yes
-  #     Host jabba.tail
-  #         Hostname jabba
-  #         User mar
-  #         ForwardX11 yes
-  #   '';
-  # };
+  programs.ssh = {
+    enable = true;
+    extraConfig = ''
+      Host kyuubi.tail
+          HostName kyuubi
+          User mar
+          ForwardX11 yes
+      Host ultron.tail
+          Hostname ultron
+          User mar
+          ForwardX11 yes
+      Host jabba.tail
+          Hostname jabba
+          User mar
+          ForwardX11 yes
+    '';
+  };
 
   # You can also manage environment variables but you will have to manually
   # source
@@ -98,8 +101,8 @@
   #  /etc/profiles/per-user/mar/etc/profile.d/hm-session-vars.sh
   #
   # if you don't want to manage your shell through Home Manager.
-  # home.sessionVariables = {
-  #   EDITOR = "nvim";
-  #   WINIT_UNIX_BACKEND = "x11";
-  # };
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    WINIT_UNIX_BACKEND = "x11";
+  };
 }

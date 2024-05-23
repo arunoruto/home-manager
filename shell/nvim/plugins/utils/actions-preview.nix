@@ -1,13 +1,7 @@
 {pkgs, ...}: {
   programs.nixvim = {
-    extraPlugins = [
-      (pkgs.vimUtils.buildVimPlugin {
-        name = "actions-preview";
-        src = builtins.fetchGit {
-          url = "https://github.com/aznhe21/actions-preview.nvim";
-          ref = "master";
-        };
-      })
+    extraPlugins = with pkgs.vimPlugins; [
+      actions-preview-nvim
     ];
     keymaps = [
       {

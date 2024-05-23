@@ -2,7 +2,7 @@
 {
   imports = [
     ./alacritty.nix
-    ./warp.nix
+    #./warp.nix
     ./wezterm.nix
   ];
 }

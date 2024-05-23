@@ -1,10 +1,10 @@
 { ... }:
-let
-  catppuccin-newsboat = builtins.fetchGit {
-    url = "https://github.com/catppuccin/newsboat";
-    ref = "main";
-  };
-in
+#let
+#  catppuccin-newsboat = builtins.fetchGit {
+#    url = "https://github.com/catppuccin/newsboat";
+#    ref = "main";
+#  };
+#in
 {
   programs.newsboat = {
     enable = true;
@@ -69,6 +69,6 @@ in
   };
 
   # Theme for alacritty
-  home.file.".newsboat/latte".source = "${catppuccin-newsboat}/themes/latte";
-  home.file.".newsboat/dark".source = "${catppuccin-newsboat}/themes/dark";
+  #home.file.".newsboat/latte".source = "${catppuccin-newsboat}/themes/latte";
+  #home.file.".newsboat/dark".source = "${catppuccin-newsboat}/themes/dark";
 }

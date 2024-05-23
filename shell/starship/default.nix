@@ -1,9 +1,10 @@
 let
   flavour = "macchiato";
-  catppuccin-starship = builtins.fetchGit {
-    url = "https://github.com/catppuccin/starship";
-    ref = "main";
-  };
+  catppuccin-starship = "";
+  #catppuccin-starship = builtins.fetchGit {
+  #  url = "https://github.com/catppuccin/starship";
+  #  ref = "main";
+  #};
 in {
   imports = [
     ./definitions
@@ -32,9 +33,8 @@ in {
           truncation_symbol = "../";
           style = "bold lavender";
         };
-        palette = "catppuccin_${flavour}";
-      }
-      // builtins.fromTOML (builtins.readFile
-        (catppuccin-starship + /palettes/${flavour}.toml));
+        #palette = "catppuccin_${flavour}";
+      };
+      #// builtins.fromTOML (builtins.readFile(catppuccin-starship + /palettes/${flavour}.toml));
   };
 }
