@@ -11,6 +11,16 @@
         ignore-globs = [
           ".DS_Store"
         ];
+        blocks = [
+          "permission"
+          "user"
+          "group"
+          "size"
+          "date"
+          "git"
+          "name"
+        ];
+        date = "+%a %d.%m.%y %X";
         sorting = {
           dir-grouping = "first";
         };
@@ -29,10 +39,6 @@
     };
 
     thefuck = {
-      enable = true;
-    };
-
-    yazi = {
       enable = true;
     };
 
