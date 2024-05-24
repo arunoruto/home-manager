@@ -1,17 +1,24 @@
 {pkgs, ...}: {
   programs.yazi = {
     enable = true;
+    # package = pkgs.unstable.yazi;
     settings = {
       plugin = {
         prepend_previewers = [
           {
             name = "*.md";
-            run = "${pkgs.glow}/bin/glow";
+            run = "glow";
+            # run = "${pkgs.glow}/bin/glow";
           }
           {
             mime = "text/csv";
             run = "miller";
           }
+          {
+            name = "*.bin";
+            run = "hexyl";
+          }
+
         ];
       };
     };
@@ -33,6 +40,24 @@
         repo = "miller.yazi";
         rev = "75f00026a0425009edb6fedcfbe893f3d2ddedf4";
         hash = "sha256-u8xadj6/s16xXUAWGezYBqnygKaFMnRUsqtjMDr6DZA=";
+      };
+    };
+    ".config/yazi/plugins/hexyl.yazi" = {
+      recursive = true;
+      source = pkgs.fetchFromGitHub {
+        owner = "Reledia";
+        repo = "hexyl.yazi";
+        rev = "f71d9d936be1bd064f267e0d36550949901719d5";
+        hash = "sha256-JYj8j0MRDoLBzBtMyY4DJkNdzI4h/HIkoRT3s2onDvs=";
+      };
+    };
+    ".config/yazi/plugins/ouch.yazi" = {
+      recursive = true;
+      source = pkgs.fetchFromGitHub {
+        owner = "ndtoan96";
+        repo = "ouch.yazi";
+        rev = "694d149be5f96eaa0af68d677c17d11d2017c976";
+        hash = "sha256-J3vR9q4xHjJt56nlfd+c8FrmMVvLO78GiwSNcLkM4OU=";
       };
     };
   };
