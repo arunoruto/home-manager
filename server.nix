@@ -14,6 +14,7 @@
     glow
     hugo
     julia
+    miller
     vivid
 
     # zsh-autosuggestions
