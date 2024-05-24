@@ -12,9 +12,11 @@
     speedtest-cli
 
     glow
+    hexyl
     hugo
     julia
     miller
+    ouch
     vivid
 
     # zsh-autosuggestions
