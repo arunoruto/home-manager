@@ -38,6 +38,10 @@
       modules = [
         nixvim.homeManagerModules.nixvim
         stylix.homeManagerModules.stylix
+        {
+          stylix.image = nixpkgs.lib.mkDefault ./desktop/default-wallpaper.png;
+          stylix.targets.nixvim.enable = nixpkgs.lib.mkDefault false;
+        }
         ./home.nix
       ];
 
