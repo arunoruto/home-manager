@@ -31,6 +31,11 @@
       tmuxPlugins.vim-tmux-navigator
     ];
     extraConfig = ''
+      # Make TMUX work with yazi
+      set -g allow-passthrough on
+      set -ga update-environment TERM
+      set -ga update-environment TERM_PROGRAM
+
       # set -g status-right "#{pomodoro_status}"
       # https://stackoverflow.com/questions/41783367/tmux-tmux-true-color-is-not-working-properly/41786092#41786092
       set-option -sa terminal-overrides ",xterm*:Tc"
